@@ -1,3 +1,5 @@
+### Viikon 1 githarjoittelun log
+
 annisimonen@Anni-Air ot_viikko1 % git log --stat | cat
 commit 812a642152046f60d711e33eb3a8286a54ea39c3
 Author: Anni Simonen <anni.simonen@helsinki.fi>
