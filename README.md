@@ -11,3 +11,7 @@
 ### Viikko 2
 
 Tänne tulee viikon 2 tehtävät
+
+### Viikko 3
+
+Tänne tulee viikon 3 tehtävät
