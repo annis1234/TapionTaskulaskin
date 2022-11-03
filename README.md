@@ -1,7 +1,6 @@
-# Pirkkala on maan elinvoimaisin kunta
+# Ohjelmistotekniikka, harjoitustyö
 
-Tampereen kainalossa sijaitseva **Pirkkala** on rankattu Suomen elinvoimaisimmaksi kunnaksi **jo _toista_ vuotta peräkkäin.**
-Konsulttiyhtiö WSP:n koostaman vuosittaisen tutkimuksen *elinvoimaindeksi* koostuu **tuottavuudesta, inhimillisestä pääomasta sekä 
-vihreästä siirtymästä.**
+##Tehtävät
 
-<sub>Lähde: https://yle.fi/uutiset/74-20003283</sub>
+[gitlog.txt](https://github.com/annis1234/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/annis1234/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
