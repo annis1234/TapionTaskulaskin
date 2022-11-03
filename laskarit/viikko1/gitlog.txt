@@ -1,0 +1,117 @@
+annisimonen@Anni-Air ot_viikko1 % git log --stat | cat
+commit 812a642152046f60d711e33eb3a8286a54ea39c3
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Thu Nov 3 10:54:59 2022 +0200
+
+    poistettu file1 ja uudelleennimetty file2
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3102b8cc8874be2c191545a9ffabf4abc58743d4
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Thu Nov 3 10:50:47 2022 +0200
+
+    korjattu kirjoitusvirhe
+
+ toinen.txto => toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b032e109b95f0c405841571767bb6d4c9d12f13c
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Thu Nov 3 10:46:19 2022 +0200
+
+    luotu hakemisto ja tiedostot
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3a6544f0fba39e8b1f00c1ddea13dee1207a1152
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 15:02:16 2022 +0200
+
+    muutettu tiedostoja eka ja kolmas
+
+ eka.txt    | 3 ++-
+ kolmas.txt | 5 ++++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+commit ae616c14604c0e8254b7cf6f8e9426b34f74cd99
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 14:52:26 2022 +0200
+
+    uudelleennimetty tiedosto.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 20b726d704a74a26774d86c1c3b549b690ce357e
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 14:50:50 2022 +0200
+
+    poistettu toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit ff5397097ca55f2655bf88b6661f8d4cdf005479
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 14:38:39 2022 +0200
+
+    poistettu tekstiä ja lisätty uutta tekstiä
+
+ stuff/tiedosto.txt | 24 +++++++++++++-----------
+ 1 file changed, 13 insertions(+), 11 deletions(-)
+
+commit 4c4574bd24ca92fa2bb55256c8178967470145d3
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 14:33:15 2022 +0200
+
+    lisätty tiedostoon paljon tekstiä
+
+ stuff/tiedosto.txt | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+commit 3fb7d14d35186c4cd087776f70239a2818993662
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 13:52:21 2022 +0200
+
+    hakemisto 'stuff' luotu
+
+ stuff/testi.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit cf4ebebee523977b8e1e7b44ebd2831ac4b789d0
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 13:48:42 2022 +0200
+
+    lisäys ja muutokset
+
+ kolmas.txt  | 1 +
+ toinen.txt  | 1 +
+ toinen.txto | 1 +
+ 3 files changed, 3 insertions(+)
+
+commit 9f51d8a736fefdfa12d9da572810725aef58d367
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 13:38:08 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 819a115989e404652ca019260295a5e6a1e46f56
+Author: Anni Simonen <anni.simonen@helsinki.fi>
+Date:   Wed Nov 2 13:34:38 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+annisimonen@Anni-Air ot_viikko1 % annisimonen@Anni-Air ot_viikko1 % git log --stat | cat
+commit 812a642
