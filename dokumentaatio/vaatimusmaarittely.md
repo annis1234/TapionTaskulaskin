@@ -24,17 +24,14 @@ käyttäjä.
 
 ## Perusversion tarjoama toiminnallisuus
 
-- 
-
-
 ### Ennen kirjautumista
 
 - Käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan
- - Salasanan on oltava vähintään 8 merkkiä pitkä ja sen tulee sisältää:
-  - iso kirjain
-  - pieni kirjain
-  - numero
-  - erikoismerkki
+  - Salasanan on oltava vähintään 8 merkkiä pitkä ja sen tulee sisältää:
+    - iso kirjain
+    - pieni kirjain
+    - numero
+    - erikoismerkki
 
 ### Kirjautumisen jälkeen
 
