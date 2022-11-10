@@ -22,7 +22,7 @@ käyttäjä.
 
 ## Käyttöliittymäluonnos
 
-(https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/kayttoliittyma_luonnos.jpeg)
+!(https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/kayttoliittyma_luonnos.jpeg)
 
 ## Perusversion tarjoama toiminnallisuus
 
