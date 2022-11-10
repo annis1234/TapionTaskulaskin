@@ -40,7 +40,7 @@ käyttäjä.
 - Käyttäjä näkee tunnukselleen tallennetut koealat
 - Käyttäjä pystyy lisäämään koealan ja tallentamaan koealalle puita
 - Käyttäjä näkee tulosteen koealan puista lasketuista keskitunnuksista
-- Käyttäjä pystyy siirtymään koealan tiedoista takaisin koealalistaukseen, ja valitsemaan toisen koealan
+- Käyttäjä pystyy siirtymään koealan tiedoista takaisin koealalistaukseen, ja luomaan/valitsemaan toisen koealan
 - Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
@@ -55,9 +55,7 @@ kunttaisuus, metsätuhot)
 laskeminen yksittäisistä puista
 - Mahdollisuus hakea ja tarkastella toisten mittaamien kuvioiden tietoja
 - Muun kuin hehtaarin kokoisten koealojen tallentaminen, jolloin 
-keskitilavuus muunnetaan hehtaarikohtaisiksi
+keskitilavuus muunnetaan hehtaarikohtaiseksi
 - Paikkatiedon lisääminen koealoille/mitattuihin puihin
-- Tarkastelutason laajentaminen: koealat kuuluvat metsikkökuviolle, ja kuviot muodostavat metsän
-- Nimensä mukaisesti sovellus olisi parhaimmillaan, jos tiedot voisi 
-tallentaa suoraan metsässsä, joten jokin mobiilisovellus/verkossa toimiva 
-versio sovelluksesta olisi hyödyllinen
+- Tarkastelutason laajentaminen: koealat kuuluvat metsikkökuviolle, ja kuviot muodostavat metsän. Koealamittausten perusteella voidaan estimoida 
+metsikkötason tunnuksia.
