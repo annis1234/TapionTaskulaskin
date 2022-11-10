@@ -10,7 +10,7 @@
 
 ### Viikko 2
 
-Tänne tulee viikon 2 tehtävät
+[Vaatimusmäärittely](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
 ### Viikko 3
 
