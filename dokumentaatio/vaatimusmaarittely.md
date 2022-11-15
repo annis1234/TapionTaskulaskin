@@ -56,6 +56,6 @@ laskeminen yksittäisistä puista
 - Mahdollisuus hakea ja tarkastella toisten mittaamien kuvioiden tietoja
 - Muun kuin hehtaarin kokoisten koealojen tallentaminen, jolloin 
 keskitilavuus muunnetaan hehtaarikohtaiseksi
-- Paikkatiedon lisääminen koealoille/mitattuihin puihin
+- Koordinaattien lisääminen koealoille/mitattuihin puihin
 - Tarkastelutason laajentaminen: koealat kuuluvat metsikkökuviolle, ja kuviot muodostavat metsän. Koealamittausten perusteella voidaan estimoida 
 metsikkötason tunnuksia.
