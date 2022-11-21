@@ -38,7 +38,7 @@ poetry run invoke start
 
 Testit suoritetaan komennolla:
 
-````bash
+```bash
 poetry run invoke test
 
 ### Testikattavuus
