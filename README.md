@@ -6,11 +6,11 @@ käyttäjätunnuksella ja salasanalla
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely]
+[Vaatimusmäärittely] (https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
-[Työaikakirjanpito]
+[Työaikakirjanpito] (https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
-[Changelog]
+[Changelog] (https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 
 ## Asennus
 
