@@ -30,7 +30,7 @@ poetry run invoke start
 
 Ohjelma suoritetaan komennolla:
 
-````bash
+```bash
 poetry run invoke start
 ```
 
