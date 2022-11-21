@@ -1,4 +1,4 @@
-from tree import Tree
+from entities.tree import Tree
 
 class Plot():
 
