@@ -7,7 +7,9 @@ käyttäjätunnuksella ja salasanalla
 ## Dokumentaatio
 
 [Vaatimusmäärittely]
+
 [Työaikakirjanpito]
+
 [Changelog]
 
 ## Asennus
@@ -40,6 +42,7 @@ Testit suoritetaan komennolla:
 
 ```bash
 poetry run invoke test
+```
 
 ### Testikattavuus
 
