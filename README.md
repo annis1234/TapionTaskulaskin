@@ -1,19 +1,49 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Tapion Taskulaskin
 
-## Tehtävät
+Sovelluksen avulla voidaan tallentaa puutunnuksiaa koealoittin, ja laskea 
+koealakohtaisia puustotietoja. Käyttäjä kirjautuu sovellukseen henkilökohtaisella 
+käyttäjätunnuksella ja salasanalla
 
-### Viikko 1
+## Dokumentaatio
 
-[gitlog.txt](https://github.com/annis1234/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
+[Vaatimusmäärittely]
+[Työaikakirjanpito]
+[Changelog]
 
-[komentorivi.txt](https://github.com/annis1234/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+## Asennus
 
-### Viikko 2
+1. Asenna riippuvuudet komennolla:
 
-[Vaatimusmäärittely](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+```bash
+poetry install
+```
 
-[Työaikakirjanpito](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+2. Käynnistä sovellus komennolla:
 
-### Viikko 3
+```bash
+poetry run invoke start
+```
 
-Tänne tulee viikon 3 tehtävät
+## Komentorivitoiminnot
+
+### Ohjelman suorittaminen
+
+Ohjelma suoritetaan komennolla:
+
+````bash
+poetry run invoke start
+
+### Testaus
+
+Testit suoritetaan komennolla:
+
+````bash
+poetry run invoke test
+
+### Testikattavuus
+
+Testikattavuusraportti generoidaan _htmlcov_-hakemistoon komennolla:
+
+```bash
+poetry run invoke coverage-report
+```
