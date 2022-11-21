@@ -32,6 +32,7 @@ Ohjelma suoritetaan komennolla:
 
 ````bash
 poetry run invoke start
+```
 
 ### Testaus
 
