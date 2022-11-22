@@ -1,4 +1,4 @@
-from entities.tree import Tree
+from tree import Tree
 
 class Plot():
 
@@ -25,8 +25,8 @@ class Plot():
                 row = row.replace("\n", "")
                 parts = row.split(";")
                 sp = parts[0]
-                d = parts[1]
-                h = parts[2]
+                d = int(parts[1])
+                h = int(parts[2])
                 trees.append(Tree(sp, d, h))
 
         return trees
