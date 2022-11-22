@@ -1,8 +1,6 @@
 # Tapion Taskulaskin
 
-Sovelluksen avulla voidaan tallentaa puutunnuksiaa koealoittin, ja laskea 
-koealakohtaisia puustotietoja. Käyttäjä kirjautuu sovellukseen henkilökohtaisella 
-käyttäjätunnuksella ja salasanalla
+Tapion taskulaskin on aputyökalu metsänmittaamiseen. Sovelluksen tämänhetkisessä versiossa käyttäjä voi tallentaa puutunnuksia csv-tiedostoon, ja tulostaa tallennetut puut.
 
 ## Dokumentaatio
 
