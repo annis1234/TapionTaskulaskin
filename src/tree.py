@@ -7,5 +7,5 @@ class Tree():
         self.h = h
 
     def __str__(self):
-        return f"Puulaji: {self.sp}, läpimitta: {self.d}, pituus: {self.h}"
+        return f"Puulaji: {self.sp}, läpimitta (cm): {self.d}, pituus (cm): {self.h}"
 
