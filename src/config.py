@@ -11,4 +11,3 @@ except FileNotFoundError:
 
 PLOT_FILENAME = os.getenv("PLOT_FILENAME") or "plot.csv"
 PLOT_FILE_PATH = os.path.join(dirname, "data", PLOT_FILENAME)
-

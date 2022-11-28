@@ -4,7 +4,6 @@ from repositories.plot_repository import (
     plot_repository as default_plot_repository)
 
 
-
 class PlotService():
 
     def __init__(self, plot_repository=default_plot_repository):
@@ -39,34 +38,34 @@ class PlotService():
             d_sum += tree.d
         return d_sum/len(trees)
 
-    def mean_v(self):
+    def sum_v(self):
         v_sum = 0
         trees = self._plot_repository.find_all()
         for tree in trees:
             v_sum += tree.v
-        return v_sum/len(trees)
+        return round(v_sum, 3)
 
     def return_v(self):
-        v = []
+        trees_v = []
         trees = self._plot_repository.find_all()
         for tree in trees:
-            v.append(tree.v)
-        return v
-    
-    def return_h(self):
-        h = []
-        trees = self._plot_repository.find_all()
-        for tree in trees:
-            h.append(tree.h)
+            trees_v.append(tree.v)
+        return trees_v
 
-        return h
-        
-    def return_d(self):
-        d = []
-        trees =self._plot_repository.find_all()
+    def return_h(self):
+        trees_h = []
+        trees = self._plot_repository.find_all()
         for tree in trees:
-            d.append(tree.d)
-        return d
+            trees_h.append(tree.h)
+
+        return trees_h
+
+    def return_d(self):
+        trees_d = []
+        trees = self._plot_repository.find_all()
+        for tree in trees:
+            trees_d.append(tree.d)
+        return trees_d
 
     def main_tree_sp(self):
         trees = self._plot_repository.find_all()

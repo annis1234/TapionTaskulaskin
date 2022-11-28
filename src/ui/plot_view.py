@@ -2,6 +2,7 @@ from services.plot_service import plot_service
 from entities.tree import Tree
 from tkinter import ttk, constants
 
+
 class PlotView():
 
     def __init__(self, root):
@@ -21,7 +22,7 @@ class PlotView():
 
     def destroy(self):
         self._frame.destroy()
-    
+
     def _initialize_header(self):
         header = ttk.Label(master=self._frame, text="Tapion taskulaskin")
         header.grid(columnspan=2, sticky=constants.W, padx=10, pady=10)
@@ -32,8 +33,8 @@ class PlotView():
 
    #     self._stand_data_view =StandDataView(self._stand_data_frame)
 #
- #       self._stand_data_view.pack()    
-    
+ #       self._stand_data_view.pack()
+
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
@@ -53,7 +54,6 @@ class PlotView():
             master=self._frame,
             text="Tyhjennä koeala",
             command=self._handle_clear_plot)
-
 
         self._sp_entry = ttk.Entry(master=self._frame)
         self._h_entry = ttk.Entry(master=self._frame)
