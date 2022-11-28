@@ -1,5 +1,10 @@
 from invoke import task
 
+import inspect
+
+if not hasattr(inspect, 'getargspec'):
+    inspect.getargspec = inspect.getfullargspec
+
 @task
 def foo(ctx):
     print("bar")
