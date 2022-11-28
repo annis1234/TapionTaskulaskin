@@ -25,22 +25,22 @@ class PlotRepository():
 
         self._ensure_file_exists()
 
-        with open(self._file_path) as file:
+        with open(self._file_path, encoding="utf-8") as file:
             for row in file:
                 row = row.replace("\n", "")
                 parts = row.split(";")
-                sp = parts[0]
-                d = float(parts[1])
-                h = float(parts[2])
-                trees.append(Tree(sp, d, h))
+                tree_sp = parts[0]
+                tree_d = float(parts[1])
+                tree_h = float(parts[2])
+                trees.append(Tree(tree_sp, tree_d, tree_h))
 
         return trees
 
     def _write(self, trees):
 
-        with open(self._file_path, "w") as file:
+        with open(self._file_path, "w", encoding="utf-8") as file:
             for tree in trees:
-                row = f"{tree.sp};{float(tree.d)};{float(tree.h)}"
+                row = f"{tree.tree_sp};{float(tree.tree_d)};{float(tree.tree_h)}"
 
                 file.write(row+"\n")
 

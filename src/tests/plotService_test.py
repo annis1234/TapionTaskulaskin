@@ -15,7 +15,7 @@ class TestPlot(unittest.TestCase):
         trees = self.plot_service.return_trees()
 
         self.assertEqual(len(trees), 1)
-        self.assertEqual(trees[0].sp, "Mänty")
+        self.assertEqual(trees[0].tree_sp, "Mänty")
 
     def test_mean_height(self):
         tree1 = Tree("Mänty", 28, 20)

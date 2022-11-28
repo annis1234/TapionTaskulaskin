@@ -1,9 +1,13 @@
+"""Module in charge of plot-view"""
+
+from tkinter import ttk, constants
 from services.plot_service import plot_service
 from entities.tree import Tree
-from tkinter import ttk, constants
 
 
 class PlotView():
+
+    """Koealanäkymästä vastaava luokka"""
 
     def __init__(self, root):
         self._root = root
@@ -12,8 +16,8 @@ class PlotView():
         self._sp_entry = None
         self._d_entry = None
         self._h_entry = None
-        self._stand_data_frame = None
-        self._stand_data_view = None
+#        self._stand_data_frame = None
+  #      self._stand_data_view = None
 
         self._initialize()
 
@@ -77,11 +81,11 @@ class PlotView():
             row=9, column=0, sticky=constants.W, padx=5, pady=5)
 
     def _handle_add_tree(self):
-        sp = self._sp_entry.get()
-        h = self._h_entry.get()
-        d = self._d_entry.get()
+        tree_sp = self._sp_entry.get()
+        tree_h = self._h_entry.get()
+        tree_d = self._d_entry.get()
 
-        tree = Tree(sp, d, h)
+        tree = Tree(tree_sp, tree_d, tree_h)
 
         plot_service.create_tree(tree)
         self._sp_entry.delete(0, constants.END)

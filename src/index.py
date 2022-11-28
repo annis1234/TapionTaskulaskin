@@ -1,4 +1,8 @@
-from tkinter import Tk, ttk, constants
+""""
+Ohjelman käynnistyksestä vastaava luokka
+"""
+
+from tkinter import Tk
 from ui.ui import UI
 
 window = Tk()
