@@ -1,9 +1,14 @@
 | **Päivä** | **Aika** | **Mitä tein** |
 | --------- | -------- | ------------- |
-| 10.11 | 2 | Vaatimusmäärittelyn ja käyttöliittymäluonnoksen kirjoittaminen |
-| 11.11 | 5 | Tkinter- ja tietokantaharjoittelua
-| 15.11 | 3 | Tekstikäyttöliittymän ja tiedostoon tallennuksen  luonnostelua ja kokeiluja
-| 16.11 | 2 | Lisää kokeiluja ja viikon palautuksen puhtaaksikirjoittaminen
-| 17.11 | 2 | Testaamisen aloitus
-| 21.11 | 1 | Viikon palautuksen viimeistelyä, testaaminen Cubblilla
-| yht.  |15 | 
+| 10.11 |  2 | Vaatimusmäärittelyn ja käyttöliittymäluonnoksen kirjoittaminen |
+| 11.11 |  5 | Tkinter- ja tietokantaharjoittelua
+| 15.11 |  3 | Tekstikäyttöliittymän ja tiedostoon tallennuksen  luonnostelua ja kokeiluja
+| 16.11 |  2 | Lisää kokeiluja ja viikon palautuksen puhtaaksikirjoittaminen
+| 17.11 |  2 | Testaamisen aloitus
+| 21.11 |  1 | Viikon palautuksen viimeistelyä, testaaminen Cubblilla
+| 22.11 |  2 | Lisää Tkinter-harjoittelua ja graafisen käyttöliittymän luonnostelua testisovelluksessa
+| 23.11.|  4 | Graafisen käyttöliittymän kirjoittaminen varsinaiseen sovellukseen, koodin refaktorointia,  keskitunnusfunktioiden 
+lisääminen
+| 28.11 |  5 | Testien kirjoittaminen, Pylintin käyttöönotto, koodin siistimistä, testaaminen Cubblilla
+| 29.11 |  2 | Lisää siistimistä ja testaamista Cubblilla, luokkakaavion kirjoitus ym. dokumentaation päivitys
+| yht.  | 28 | 
