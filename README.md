@@ -10,6 +10,8 @@ Tapion taskulaskin on aputyökalu metsänmittaamiseen. Sovelluksen tämänhetkis
 
 [Changelog](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 
+[Arkkitehtuurikuvaus](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
@@ -48,4 +50,11 @@ Testikattavuusraportti generoidaan _htmlcov_-hakemistoon komennolla:
 
 ```bash
 poetry run invoke coverage-report
+```
+
+### Pylint
+
+Tiedoston .pylintrc määrittelemät tarkistukset suoritetaan komennolla:
+```bash
+poetry run invoke lint
 ```
