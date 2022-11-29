@@ -5,3 +5,10 @@
 - Käyttäjä pystyy tulostamaan tiedostoon tallennetut puut
 - Käyttäjä pystyy tyhjentämään tiedoston
 - Testattu, että yksittäinen puu tallentuu tiedostoon oikein
+
+## Viikko 4
+
+- Lisätty sovellukseen graafinen käyttöliittymä
+- Lisätty service- ja repository-luokat
+- Lisätty funktiot keskipituuden, keskiläpimitan, pääpuulajin ja tilavuuden laskemiseen (tulosteet eivät näy vielä käyttäjälle)
+- Lisätty testit, joilla testattu edellämainitut funktiot toimiviksi
