@@ -1,4 +1,3 @@
-"""Module in charge of user interface"""
 from ui.plot_view import PlotView
 
 class UI:

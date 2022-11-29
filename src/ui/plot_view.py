@@ -1,13 +1,9 @@
-"""Module in charge of plot-view"""
-
 from tkinter import ttk, constants
 from services.plot_service import plot_service
 from entities.tree import Tree
 
 
 class PlotView():
-
-    """Koealanäkymästä vastaava luokka"""
 
     def __init__(self, root):
         self._root = root
@@ -16,8 +12,6 @@ class PlotView():
         self._sp_entry = None
         self._d_entry = None
         self._h_entry = None
-#        self._stand_data_frame = None
-  #      self._stand_data_view = None
 
         self._initialize()
 
@@ -30,14 +24,6 @@ class PlotView():
     def _initialize_header(self):
         header = ttk.Label(master=self._frame, text="Tapion taskulaskin")
         header.grid(columnspan=2, sticky=constants.W, padx=10, pady=10)
-
-  #  def _initialize_stand_data(self):
-  #      if self._stand_data_view:
-  #          self._stand_data_view.destroy()
-
-   #     self._stand_data_view =StandDataView(self._stand_data_frame)
-#
- #       self._stand_data_view.pack()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)

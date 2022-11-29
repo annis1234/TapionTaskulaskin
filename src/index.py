@@ -1,7 +1,3 @@
-""""
-Ohjelman käynnistyksestä vastaava luokka
-"""
-
 from tkinter import Tk
 from ui.ui import UI
 

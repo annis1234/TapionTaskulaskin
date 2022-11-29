@@ -1,10 +1,6 @@
-"""Module in charge of Tree-objects"""
-
 from math import pi
 
 class Tree():
-
-    """Format a Tree-object"""
 
     def __init__(self, tree_sp: str, tree_d: int, tree_h: int):
         self.tree_sp = tree_sp
