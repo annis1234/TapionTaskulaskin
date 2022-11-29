@@ -9,6 +9,6 @@
 ## Viikko 4
 
 - Lisätty sovellukseen graafinen käyttöliittymä
-- Lisätty service- ja repository-luokat
-- Lisätty funktiot keskipituuden, keskiläpimitan, pääpuulajin ja tilavuuden laskemiseen (tulosteet eivät näy vielä käyttäjälle)
+- Refaktoroitu sovelluslogiikan koodi service-luokkaan ja tiedon tallennuksesta vastaava koodi repository-luokkaan
+- Lisätty funktiot keskipituuden, keskiläpimitan, pääpuulajin ja tilavuuden laskemiseksi (tulosteet eivät näy vielä graafisessa käyttöliittymässä)
 - Lisätty testit, joilla testattu edellämainitut funktiot toimiviksi
