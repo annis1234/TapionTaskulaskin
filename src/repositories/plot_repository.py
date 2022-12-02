@@ -1,12 +1,23 @@
 from pathlib import Path
+import os
 from entities.tree import Tree
 from config import PLOT_FILE_PATH
 
 
 class PlotRepository():
 
-    def __init__(self, file_path):
-        self._file_path = file_path
+    def __init__(self):
+        self._PLOT_FILENAME = None
+        self._file_path = None
+
+    def create_plot(self, file_name):
+        self._PLOT_FILENAME = f"{file_name}.csv"
+        self._file_path = os.path.join(PLOT_FILE_PATH, self._PLOT_FILENAME)
+        Path(self._file_path).touch()
+
+    def select_plot(self, plot_name):
+        self._PLOT_FILENAME = f"{plot_name}.csv"
+        self._file_path = os.path.join(PLOT_FILE_PATH, self._PLOT_FILENAME)
 
     def find_all(self):
         return self._read()
@@ -47,4 +58,4 @@ class PlotRepository():
     def clear_plot(self):
         open(self._file_path, "w").close()
 
-plot_repository = PlotRepository(PLOT_FILE_PATH)
+plot_repository = PlotRepository()

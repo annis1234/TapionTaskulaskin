@@ -7,9 +7,20 @@ class PlotService():
 
     def __init__(self, plot_repository=default_plot_repository):
         self._plot_repository = plot_repository
+        self._plots = []
+
+    def create_plot(self, plot_filename):
+        self._plots.append(plot_filename)
+        self._plot_repository.create_plot(plot_filename)
+
+    def select_plot(self, plot_filename):
+        self._plot_repository.select_plot(plot_filename)
 
     def clear_plot(self):
         self._plot_repository.clear_plot()
+
+    def return_plots(self):
+        return self._plots
 
     def create_tree(self, tree: Tree):
         self._plot_repository.create(tree)

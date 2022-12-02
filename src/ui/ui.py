@@ -1,5 +1,6 @@
 from ui.plot_view import PlotView
 from ui.stand_data_view import StandDataView
+from ui.handle_plots_view import HandlePlotsView
 
 class UI:
 
@@ -8,7 +9,7 @@ class UI:
         self._current_view = None
 
     def start(self):
-        self._show_plot_view()
+        self._show_handle_plots_view()
 
     def _hide_current_view(self):
         if self._current_view:
@@ -17,10 +18,15 @@ class UI:
 
     def _show_plot_view(self):
         self._hide_current_view()
-        self._current_view = PlotView(self._root, self._show_stand_data_view)
+        self._current_view = PlotView(self._root, self._show_stand_data_view, self._show_handle_plots_view)
         self._current_view.pack()
 
     def _show_stand_data_view(self):
         self._hide_current_view()
         self._current_view = StandDataView(self._root, self._show_plot_view)
+        self._current_view.pack()
+
+    def _show_handle_plots_view(self):
+        self._hide_current_view()
+        self._current_view = HandlePlotsView(self._root, self._show_plot_view)
         self._current_view.pack()

@@ -2,11 +2,11 @@ import unittest
 from services.plot_service import plot_service
 from entities.tree import Tree
 
-
 class TestPlot(unittest.TestCase):
 
     def setUp(self):
         self.plot_service = plot_service
+        self.plot_service.create_plot("test_plot")
         self.plot_service.clear_plot()
 
     def test_create(self):
@@ -45,4 +45,9 @@ class TestPlot(unittest.TestCase):
         self.plot_service.create_tree(tree2)
         self.plot_service.create_tree(tree3)
         self.assertEqual(self.plot_service.main_tree_sp(), "Mänty")
+
+    def test_create_two_plots(self):
+        plot_service.create_plot("test_plot2")
+        plots =self.plot_service.return_plots()
+        self.assertEqual(plots[2], "test_plot2")
         

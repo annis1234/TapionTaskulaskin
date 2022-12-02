@@ -6,7 +6,7 @@ from ui.stand_data_view import StandDataView
 
 class PlotView():
 
-    def __init__(self, root, handle_show_stand_data_view):
+    def __init__(self, root, handle_show_stand_data_view, show_handle_plots_view):
         self._root = root
         self._frame = None
         self._plot_service = plot_service
@@ -14,6 +14,7 @@ class PlotView():
         self._d_entry = None
         self._h_entry = None
         self._handle_show_stand_data_view = handle_show_stand_data_view
+        self._show_handle_plots_view = show_handle_plots_view
         self._stand_data_frame = None
         self._stand_data_view = None
 
@@ -63,6 +64,12 @@ class PlotView():
             command=self._handle_show_stand_data_view
         )
 
+        show_handle_plots_view_button = ttk.Button(
+            master=self._frame,
+            text="Takaisin",
+            command=self._show_handle_plots_view
+        )
+
         self._sp_entry = ttk.Entry(master=self._frame)
         self._h_entry = ttk.Entry(master=self._frame)
         self._d_entry = ttk.Entry(master=self._frame)
@@ -86,6 +93,10 @@ class PlotView():
 
         show_stand_data_button.grid(
             row=11, column=0, sticky=constants.W, padx=5, pady=5
+        )
+
+        show_handle_plots_view_button.grid(
+            row=12, column=0, sticky=constants.W, padx=5, pady=5
         )
 
     def _handle_add_tree(self):
