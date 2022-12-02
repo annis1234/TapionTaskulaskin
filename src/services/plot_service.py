@@ -46,4 +46,19 @@ class PlotService():
             species.append(tree.tree_sp)
         return max(species, key=species.count)
 
+    def return_h(self):
+        h = []
+        trees = self._plot_repository.find_all()
+        for tree in trees:
+            h.append(tree.tree_h)
+
+        return h
+        
+    def return_d(self):
+        d = []
+        trees =self._plot_repository.find_all()
+        for tree in trees:
+            d.append(tree.tree_d)
+        return d
+
 plot_service = PlotService()

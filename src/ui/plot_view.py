@@ -1,25 +1,37 @@
 from tkinter import ttk, constants
 from services.plot_service import plot_service
 from entities.tree import Tree
+from ui.stand_data_view import StandDataView
 
 
 class PlotView():
 
-    def __init__(self, root):
+    def __init__(self, root, handle_show_stand_data_view):
         self._root = root
         self._frame = None
         self._plot_service = plot_service
         self._sp_entry = None
         self._d_entry = None
         self._h_entry = None
+        self._handle_show_stand_data_view = handle_show_stand_data_view
+        self._stand_data_frame = None
+        self._stand_data_view = None
 
         self._initialize()
 
     def pack(self):
-        self._frame.pack(fill=constants.X)
+        self._frame.place(relx=0.5, rely=0.5 ,anchor="center")
 
     def destroy(self):
         self._frame.destroy()
+
+    def _initialize_stand_data(self):
+        if self._stand_data_view:
+            self._stand_data_view.destroy()
+
+        self._stand_data_view =StandDataView(self._stand_data_frame)
+
+        self._stand_data_view.pack()    
 
     def _initialize_header(self):
         header = ttk.Label(master=self._frame, text="Tapion taskulaskin")
@@ -45,6 +57,12 @@ class PlotView():
             text="Tyhjennä koeala",
             command=self._handle_clear_plot)
 
+        show_stand_data_button = ttk.Button(
+            master=self._frame,
+            text="Näytä koealan tiedot",
+            command=self._handle_show_stand_data_view
+        )
+
         self._sp_entry = ttk.Entry(master=self._frame)
         self._h_entry = ttk.Entry(master=self._frame)
         self._d_entry = ttk.Entry(master=self._frame)
@@ -65,6 +83,10 @@ class PlotView():
             row=8, column=0, sticky=constants.W, padx=5, pady=5)
         clear_plot_button.grid(
             row=9, column=0, sticky=constants.W, padx=5, pady=5)
+
+        show_stand_data_button.grid(
+            row=11, column=0, sticky=constants.W, padx=5, pady=5
+        )
 
     def _handle_add_tree(self):
         tree_sp = self._sp_entry.get()
