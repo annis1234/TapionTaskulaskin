@@ -3,5 +3,4 @@
 __pycache__
 .coverage
 htmlcov
-data/plot.csv
-data/test_plot.csv
+data
