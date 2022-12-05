@@ -11,4 +11,7 @@
 lisääminen
 | 28.11 |  5 | Testien kirjoittaminen, Pylintin käyttöönotto, koodin siistimistä, testaaminen Cubblilla
 | 29.11 |  2 | Lisää siistimistä ja testaamista Cubblilla, luokkakaavion kirjoitus ym. dokumentaation päivitys
-| yht.  | 28 | 
+| 30.11 |  4 | Koealatunnukset tulostavan näkymä käyttöliittymään ja useamman koealan hallinnan hahmottelua
+| 2.12  |  5 | Useamman koealan luomisen toteuttavan toiminnallisuus ja sen testaaminen 
+| 5.12  |  5 | Koodin siistimistä ja testailua, sekvenssikaavioiden kirjoitus, release 1 
+| yht.  | 42 | 
