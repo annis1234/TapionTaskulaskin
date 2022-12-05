@@ -12,3 +12,14 @@
 - Refaktoroitu sovelluslogiikan koodi service-luokkaan ja tiedon tallennuksesta vastaava koodi repository-luokkaan
 - Lisätty funktiot keskipituuden, keskiläpimitan, pääpuulajin ja tilavuuden laskemiseksi (tulosteet eivät näy vielä graafisessa käyttöliittymässä)
 - Lisätty testit, joilla testattu edellämainitut funktiot toimiviksi
+
+## Viikko 5
+
+- Käyttäjä pystyy luomaan useamman koeala-tiedoston
+- Käyttäjä pystyy valitsemaan haluamansa koealan nimen perusteella, ja 
+lisäämään puita valitulle koealalle
+- Käyttäjä näkee valitulta koealalta lasketut keskitunnukset
+- Käyttöliittymässä on kolme näkymää: koeala-tiedoston luomisnäkymä, 
+puiden lisäämisnäkymä sekä keskitunnukset näyttävä näkymä
+- Testattu, että useamman tiedoston luominen ja niiden välillä siirtyminen 
+toimii
