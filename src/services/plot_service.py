@@ -7,20 +7,18 @@ class PlotService():
 
     def __init__(self, plot_repository=default_plot_repository):
         self._plot_repository = plot_repository
-        self._plots = []
 
     def create_plot(self, plot_filename):
-        self._plots.append(plot_filename)
         self._plot_repository.create_plot(plot_filename)
 
     def select_plot(self, plot_filename):
         self._plot_repository.select_plot(plot_filename)
 
+    def return_plots(self):
+        self._plot_repository.return_plots()
+
     def clear_plot(self):
         self._plot_repository.clear_plot()
-
-    def return_plots(self):
-        return self._plots
 
     def create_tree(self, tree: Tree):
         self._plot_repository.create(tree)
@@ -56,20 +54,5 @@ class PlotService():
         for tree in trees:
             species.append(tree.tree_sp)
         return max(species, key=species.count)
-
-    def return_h(self):
-        h = []
-        trees = self._plot_repository.find_all()
-        for tree in trees:
-            h.append(tree.tree_h)
-
-        return h
-        
-    def return_d(self):
-        d = []
-        trees =self._plot_repository.find_all()
-        for tree in trees:
-            d.append(tree.tree_d)
-        return d
 
 plot_service = PlotService()

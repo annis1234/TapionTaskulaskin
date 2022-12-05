@@ -4,7 +4,7 @@ from ui.ui import UI
 window = Tk()
 window.title("Tapion taskulaskin")
 
-window.geometry("700x700")
+window.geometry("500x500")
 
 ui = UI(window)
 ui.start()

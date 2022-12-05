@@ -26,14 +26,6 @@ class PlotView():
     def destroy(self):
         self._frame.destroy()
 
-    def _initialize_stand_data(self):
-        if self._stand_data_view:
-            self._stand_data_view.destroy()
-
-        self._stand_data_view =StandDataView(self._stand_data_frame)
-
-        self._stand_data_view.pack()    
-
     def _initialize_header(self):
         header = ttk.Label(master=self._frame, text="Tapion taskulaskin")
         header.grid(columnspan=2, sticky=constants.W, padx=10, pady=10)

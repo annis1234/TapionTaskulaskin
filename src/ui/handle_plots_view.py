@@ -1,39 +1,6 @@
 from tkinter import ttk, constants
 from services.plot_service import plot_service
 
-
-class PlotListView:
-
-    def __init__ (self, root, plots):
-        self._root = root
-        self._plots = plots
-        self._frame = None
-
-        self._initialize()
-
-    def pack(self):
-        self._frame.pack(fill=constants.X)
-
-    def destroy(self):
-        self._frame.destroy()
-
-    def _initialize_plot(self, plot_name):
-        plot_frame = ttk.Frame(master=self._frame)
-        label = ttk.Label(master=plot_frame, text=plot_name)
-
-        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
-
-        plot_frame.grid_columnconfigure(0, weight=1)
-        plot_frame.pack(fill=constants.X)
-
-    def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-
-        for plot in self._plots:
-            self._initialize_plot(plot)
-
-
-
 class HandlePlotsView:
 
     def __init__(self, root, open_plot_handler):
@@ -42,7 +9,6 @@ class HandlePlotsView:
         self.plot_entry = None
         self._select_plot_entry = None
         self._frame = None
- #       self._plot_service = plot_service
         self._plot_list_frame = None
         self._plot_list_view = None
 
@@ -85,13 +51,13 @@ class HandlePlotsView:
             text="Luo koeala",
             command = self._handle_add_plot)
 
-        select_plot_label = ttk.Label(master=self._frame, text="Avaa koeala (nimi)")
+        select_plot_label = ttk.Label(master=self._frame, text="Avaa koeala (nimi):")
 
         self._select_plot_entry = ttk.Entry(master=self._frame)
 
         select_plot_button = ttk.Button(
             master = self._frame,
-            text = "Avaa",
+            text = "Avaa koeala",
             command = self._handle_open_plot
         )
 

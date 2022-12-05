@@ -46,8 +46,21 @@ class TestPlot(unittest.TestCase):
         self.plot_service.create_tree(tree3)
         self.assertEqual(self.plot_service.main_tree_sp(), "Mänty")
 
-    def test_create_two_plots(self):
+    def test_handle_two_plots(self):
         plot_service.create_plot("test_plot2")
-        plots =self.plot_service.return_plots()
-        self.assertEqual(plots[2], "test_plot2")
+        plot_service.select_plot("test_plot2")
+        tree1 = Tree("Mänty", 20, 20)
+        self.plot_service.create_tree(tree1)
+        self.assertEqual(len(self.plot_service.return_trees()), 1)
+
+        plot_service.select_plot("test_plot")
+        tree2 = Tree("Kuusi", 25, 25)
+        plot_service.create_tree(tree2)
+
+        self.assertEqual(len(self.plot_service.return_trees()), 1)
+
+        plot_service.select_plot("test_plot2")
+        plot_service.clear_plot()
+
+        self.assertEqual(len(self.plot_service.return_trees()), 0)
         
