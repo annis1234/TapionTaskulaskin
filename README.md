@@ -5,8 +5,8 @@ tämänhetkisessä versiossa käyttäjä voi luoda koealoja csv-tiedostona ja
 lisätä valitsemalleen koealalle puita. Puun yhteydessä tallennetaan puulaji sekä puun
 läpimitta ja pituus. Sovellus laskee ja palauttaa valitun 
 koealan puista lasketut koealakohtaiset keskitunnukset: pääpuulajin,
- keskiläpimitan, keskipituuden ja hehtaarikohtaisen tilavuuden.  
-Tällä hetkellä oletuksena on, että jokainen koeala on yhden hehtaarin 
+ keskiläpimitan, keskipituuden ja hehtaarikohtaisen tilavuuden. Tällä hetkellä oletuksena on, että jokainen koeala on yhden 
+hehtaarin 
 kokoinen.
 
 Koeala nimetään ja valitaan kirjoittamalla sen nimi ilman .csv-päätettä.
