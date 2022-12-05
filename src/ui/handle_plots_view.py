@@ -1,5 +1,5 @@
 from tkinter import ttk, constants
-from services.plot_service import plot_service
+from services.plot_service import PLOT_SERVICE
 
 class HandlePlotsView:
 

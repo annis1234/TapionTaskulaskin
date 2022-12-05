@@ -11,7 +11,7 @@ class UI:
     def start(self):
         self._show_handle_plots_view()
 
-    def _hide_current_view(self):
+    def _hide_current_view(self): 
         if self._current_view:
             self._current_view.destroy()
         self._current_view = None
