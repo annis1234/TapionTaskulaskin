@@ -1,7 +1,6 @@
 from tkinter import ttk, constants
-from services.plot_service import plot_service
+from services.plot_service import PLOT_SERVICE
 from entities.tree import Tree
-from ui.stand_data_view import StandDataView
 
 
 class PlotView():
@@ -9,7 +8,7 @@ class PlotView():
     def __init__(self, root, handle_show_stand_data_view, show_handle_plots_view):
         self._root = root
         self._frame = None
-        self._plot_service = plot_service
+        self._plot_service = PLOT_SERVICE
         self._sp_entry = None
         self._d_entry = None
         self._h_entry = None
@@ -98,7 +97,7 @@ class PlotView():
 
         tree = Tree(tree_sp, tree_d, tree_h)
 
-        plot_service.create_tree(tree)
+        self._plot_service.create_tree(tree)
         self._sp_entry.delete(0, constants.END)
         self._h_entry.delete(0, constants.END)
         self._d_entry.delete(0, constants.END)

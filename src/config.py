@@ -1,6 +1,5 @@
 import os
-from pathlib import Path
 
-dirname = os.path.dirname(__file__)
+DIRNAME = os.path.dirname(__file__)
 
-PLOT_FILE_PATH = os.path.join(dirname, "..", "data")
+PLOT_FILE_PATH = os.path.join(DIRNAME, "..", "data")

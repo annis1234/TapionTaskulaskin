@@ -1,7 +1,7 @@
 from entities.tree import Tree
 
 from repositories.plot_repository import (
-    plot_repository as default_plot_repository)
+    PLOT_REPOSITORY as default_plot_repository)
 
 class PlotService():
 
@@ -55,4 +55,4 @@ class PlotService():
             species.append(tree.tree_sp)
         return max(species, key=species.count)
 
-plot_service = PlotService()
+PLOT_SERVICE = PlotService()

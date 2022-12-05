@@ -1,12 +1,12 @@
 from tkinter import Tk
-from ui.ui import UI
+from ui.UI import UI
 
-window = Tk()
-window.title("Tapion taskulaskin")
+WINDOW = Tk()
+WINDOW.title("Tapion taskulaskin")
 
-window.geometry("500x500")
+WINDOW.geometry("500x500")
 
-ui = UI(window)
-ui.start()
+UI = UI(WINDOW)
+UI.start()
 
-window.mainloop()
+WINDOW.mainloop()

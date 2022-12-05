@@ -1,12 +1,12 @@
 from tkinter import ttk, constants
-from services.plot_service import plot_service
+from services.plot_service import PLOT_SERVICE
 
 class StandDataView():
 
     def __init__ (self, root, handle_show_plot_view):
         self._root = root
         self._frame = None
-        self._plot_service = plot_service
+        self._plot_service = PLOT_SERVICE
         self._handle_show_plot_view = handle_show_plot_view
         self._charts_frame = None
         self._charts_view = None
