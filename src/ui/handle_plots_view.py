@@ -11,6 +11,7 @@ class HandlePlotsView:
         self._frame = None
         self._plot_list_frame = None
         self._plot_list_view = None
+        self._plot_service = PLOT_SERVICE
 
         self._initialize()
     
@@ -20,22 +21,11 @@ class HandlePlotsView:
     def destroy(self):
         self._frame.destroy()
 
-    def _initialize_plot_list(self):
-        if self._plot_list_view:
-            self._plot_list_view.destroy()
-
-            plots = plot_service.return_plots()
-
-            self._plot_list_view = PlotListView(self._plot_list_frame, plots)
-
-            self._plot_list_view.pack()
-
     def _initialize(self):
 
         self._frame = ttk.Frame(master=self._root)
         self._plot_list_frame=ttk.Frame(master=self._frame)
 
-        self._initialize_plot_list()
         self._plot_list_frame.grid(row=1, column=0, columnspan=2, sticky=constants.EW)
 
 
@@ -67,11 +57,10 @@ class HandlePlotsView:
         select_plot_button.grid(padx=5, pady=5, sticky=constants.EW)
     
     def _handle_add_plot(self):
-        plot_service.create_plot(self._plot_entry.get())
-        self._initialize_plot_list()
+        self._plot_service.create_plot(self._plot_entry.get())
         self._plot_entry.delete(0, constants.END)
 
     def _handle_open_plot(self):
-        plot_service.select_plot(self._select_plot_entry.get())
+        self._plot_service.select_plot(self._select_plot_entry.get())
         self._select_plot_entry.delete(0, constants.END)
         self._open_plot_handler()
