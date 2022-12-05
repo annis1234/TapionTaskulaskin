@@ -39,12 +39,14 @@ käyttäjä.
 
 ### Kirjautumisen jälkeen
 
-- Käyttäjä näkee tunnukselleen tallennetut koealat
-- Käyttäjä pystyy lisäämään koealan
+- Käyttäjä näkee tallentamansa koealat
+- Käyttäjä pystyy lisäämään koealan (TEHTY)
 - Käyttäjä pystyy tallentamaan koealalle puita (TEHTY)
 - Käyttäjä pystyy tyhjentämään koealan (TEHTY)
-- Käyttäjä näkee tulosteen koealan puista lasketuista keskitunnuksista (TEHTY osittain)
-- Käyttäjä pystyy siirtymään koealan tiedoista takaisin koealalistaukseen, ja luomaan/valitsemaan toisen koealan
+- Käyttäjä näkee tulosteen koealan puista lasketuista keskitunnuksista 
+(TEHTY)
+- Käyttäjä pystyy siirtymään koealan tiedoista takaisin koealalistaukseen, 
+ja luomaan/valitsemaan toisen koealan (TEHTY)
 - Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
