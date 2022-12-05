@@ -41,9 +41,9 @@ class PlotRepository():
                 row = row.replace("\n", "")
                 parts = row.split(";")
                 tree_sp = parts[0]
-                tree_d = float(parts[1])
-                tree_h = float(parts[2])
-                trees.append(Tree(tree_sp, tree_d, tree_h))
+                tree_diameter = float(parts[1])
+                tree_height = float(parts[2])
+                trees.append(Tree(tree_sp, tree_diameter, tree_height))
 
         return trees
 
@@ -51,11 +51,11 @@ class PlotRepository():
 
         with open(self._file_path, "w", encoding="utf-8") as file:
             for tree in trees:
-                row = f"{tree.tree_sp};{float(tree.tree_d)};{float(tree.tree_h)}"
+                row = f"{tree.tree_sp};{float(tree.tree_diameter)};{float(tree.tree_height)}"
 
                 file.write(row+"\n")
 
     def clear_plot(self):
-        open(self._file_path, "w").close()
+        open(self._file_path, "w", encoding="utf-8").close()
 
 PLOT_REPOSITORY = PlotRepository()

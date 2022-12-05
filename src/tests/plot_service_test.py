@@ -28,14 +28,14 @@ class TestPlot(unittest.TestCase):
         tree2 = Tree("Mänty", 30, 25)
         self._plot_service.create_tree(tree1)
         self._plot_service.create_tree(tree2)
-        self.assertEqual(self._plot_service.mean_d(), 25)
+        self.assertEqual(self._plot_service.mean_diameter(), 25)
 
     def test_v_sum(self):
         tree1 = Tree("Mänty", 20, 20)
         tree2 = Tree("Mänty", 20, 20)
         self._plot_service.create_tree(tree1)
         self._plot_service.create_tree(tree2)
-        self.assertEqual(self._plot_service.sum_v(), 0.628)
+        self.assertEqual(self._plot_service.sum_vol(), 0.628)
 
     def test_main_tree_sp(self):
         tree1 = Tree("Mänty", 20, 20)

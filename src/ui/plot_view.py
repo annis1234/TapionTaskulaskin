@@ -25,24 +25,9 @@ class PlotView():
     def destroy(self):
         self._frame.destroy()
 
-    def _initialize_header(self):
-        header = ttk.Label(master=self._frame, text="Tapion taskulaskin")
-        header.grid(columnspan=2, sticky=constants.W, padx=10, pady=10)
-
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-
-        self._initialize_header()
-
-        label = ttk.Label(master=self._frame, text="Syötä puun tiedot:")
-        label_sp = ttk.Label(master=self._frame, text="Puulaji:")
-        label_d = ttk.Label(master=self._frame, text="Läpimitta (cm):")
-        label_h = ttk.Label(master=self._frame, text="Pituus (m):")
-
-        add_tree_button = ttk.Button(
-            master=self._frame,
-            text="Lisää puu",
-            command=self._handle_add_tree)
+        self._initialize_add_tree()
 
         clear_plot_button = ttk.Button(
             master=self._frame,
@@ -61,9 +46,33 @@ class PlotView():
             command=self._show_handle_plots_view
         )
 
+
+        clear_plot_button.grid(
+            row=9, column=0, sticky=constants.W, padx=5, pady=5)
+
+        show_stand_data_button.grid(
+            row=11, column=0, sticky=constants.W, padx=5, pady=5
+        )
+
+        show_handle_plots_view_button.grid(
+            row=12, column=0, sticky=constants.W, padx=5, pady=5
+        )
+    
+    def _initialize_add_tree(self):
+
+        label = ttk.Label(master=self._frame, text="Syötä puun tiedot:")
+        label_sp = ttk.Label(master=self._frame, text="Puulaji:")
+        label_d = ttk.Label(master=self._frame, text="Läpimitta (cm):")
+        label_h = ttk.Label(master=self._frame, text="Pituus (m):")
+
         self._sp_entry = ttk.Entry(master=self._frame)
         self._h_entry = ttk.Entry(master=self._frame)
         self._d_entry = ttk.Entry(master=self._frame)
+
+        add_tree_button = ttk.Button(
+            master=self._frame,
+            text="Lisää puu",
+            command=self._handle_add_tree)
 
         label.grid(columnspan=2, row=1, column=0,
                    sticky=constants.W, padx=5, pady=5)
@@ -79,16 +88,6 @@ class PlotView():
 
         add_tree_button.grid(
             row=8, column=0, sticky=constants.W, padx=5, pady=5)
-        clear_plot_button.grid(
-            row=9, column=0, sticky=constants.W, padx=5, pady=5)
-
-        show_stand_data_button.grid(
-            row=11, column=0, sticky=constants.W, padx=5, pady=5
-        )
-
-        show_handle_plots_view_button.grid(
-            row=12, column=0, sticky=constants.W, padx=5, pady=5
-        )
 
     def _handle_add_tree(self):
         tree_sp = self._sp_entry.get()

@@ -29,27 +29,27 @@ class PlotService():
 
     def mean_height(self):
         height_sum = 0
-        trees = self._plot_repository.find_all()
+        trees = self.return_trees()
         for tree in trees:
-            height_sum += tree.tree_h
+            height_sum += tree.tree_height
         return height_sum/len(trees)
 
-    def mean_d(self):
+    def mean_diameter(self):
         d_sum = 0
-        trees = self._plot_repository.find_all()
+        trees = self.return_trees()
         for tree in trees:
-            d_sum += tree.tree_d
+            d_sum += tree.tree_diameter
         return d_sum/len(trees)
 
-    def sum_v(self):
-        v_sum = 0
-        trees = self._plot_repository.find_all()
+    def sum_vol(self):
+        vol_sum = 0
+        trees = self.return_trees()
         for tree in trees:
-            v_sum += tree.tree_v
-        return round(v_sum, 3)
+            vol_sum += tree.tree_vol
+        return round(vol_sum, 3)
 
     def main_tree_sp(self):
-        trees = self._plot_repository.find_all()
+        trees = self.return_trees()
         species = []
         for tree in trees:
             species.append(tree.tree_sp)

@@ -9,8 +9,6 @@ class HandlePlotsView:
         self.plot_entry = None
         self._select_plot_entry = None
         self._frame = None
-        self._plot_list_frame = None
-        self._plot_list_view = None
         self._plot_service = PLOT_SERVICE
 
         self._initialize()
@@ -24,13 +22,13 @@ class HandlePlotsView:
     def _initialize(self):
 
         self._frame = ttk.Frame(master=self._root)
-        self._plot_list_frame=ttk.Frame(master=self._frame)
+        self._initialize_create_plot()
+        self._initialize_select_plot()
 
-        self._plot_list_frame.grid(row=1, column=0, columnspan=2, sticky=constants.EW)
-
-
+    def _initialize_create_plot(self):
         plot_label = ttk.Label(master=self._frame, text="Koealan nimi:")
         self._plot_entry = ttk.Entry(master=self._frame)
+
         plot_label.grid(
             row=1, column=0, sticky=constants.W, padx=10, pady=10)
         self._plot_entry.grid(
@@ -41,8 +39,10 @@ class HandlePlotsView:
             text="Luo koeala",
             command = self._handle_add_plot)
 
-        select_plot_label = ttk.Label(master=self._frame, text="Avaa koeala (nimi):")
+        create_plot_button.grid(padx=5, pady=5, sticky=constants.EW)
 
+    def _initialize_select_plot(self):
+        select_plot_label = ttk.Label(master=self._frame, text="Avaa koeala (nimi):")
         self._select_plot_entry = ttk.Entry(master=self._frame)
 
         select_plot_button = ttk.Button(
@@ -51,7 +51,6 @@ class HandlePlotsView:
             command = self._handle_open_plot
         )
 
-        create_plot_button.grid(padx=5, pady=5, sticky=constants.EW)
         select_plot_label.grid(padx=5, pady=5, sticky=constants.EW)
         self._select_plot_entry.grid(padx=5, pady=5, sticky=constants.EW)
         select_plot_button.grid(padx=5, pady=5, sticky=constants.EW)
