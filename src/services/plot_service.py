@@ -95,4 +95,8 @@ class PlotService():
     def logout(self):
         self._user = None
 
+    def get_users(self):
+        return self._user_repository.find_all()
+
+
 PLOT_SERVICE = PlotService()
