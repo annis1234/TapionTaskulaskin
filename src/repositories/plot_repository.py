@@ -20,7 +20,8 @@ class PlotRepository():
         self._file_path = os.path.join(PLOT_FILE_PATH, self._plot_filename)
 
     def return_plots(self):
-        return [file for file in os.listdir(PLOT_FILE_PATH) if not file.startswith(".")]
+        return [file for file in os.listdir(PLOT_FILE_PATH) if not (file.startswith(".") or file.startswith("test_"))]
+        # FIX: filter test plots
 
     def find_all(self):
         return self._read()
