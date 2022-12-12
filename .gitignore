@@ -5,3 +5,6 @@ __pycache__
 htmlcov
 data/*
 !data/.gitkeep
+!data/plots
+data/plots/*
+!data/plots/.gitkeep
