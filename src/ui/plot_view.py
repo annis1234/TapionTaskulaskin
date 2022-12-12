@@ -1,3 +1,5 @@
+
+import tkinter as Tk
 from tkinter import ttk, constants
 from services.plot_service import PLOT_SERVICE
 from entities.tree import Tree
@@ -17,6 +19,9 @@ class PlotView():
         self._stand_data_frame = None
         self._stand_data_view = None
 
+        self._font = "Comic Sans MS", 15
+        self._fg = "green"
+
         self._initialize()
 
     def pack(self):
@@ -29,20 +34,26 @@ class PlotView():
         self._frame = ttk.Frame(master=self._root)
         self._initialize_add_tree()
 
-        clear_plot_button = ttk.Button(
+        clear_plot_button = Tk.Button(
             master=self._frame,
             text="Tyhjennä koeala",
-            command=self._handle_clear_plot)
+            command=self._handle_clear_plot,
+            font=self._font,
+            foreground=self._fg)
 
-        show_stand_data_button = ttk.Button(
+        show_stand_data_button = Tk.Button(
             master=self._frame,
             text="Näytä koealan tiedot",
+            font=self._font,
+            foreground=self._fg,
             command=self._handle_show_stand_data_view
         )
 
-        show_handle_plots_view_button = ttk.Button(
+        show_handle_plots_view_button = Tk.Button(
             master=self._frame,
             text="Takaisin",
+            font=self._font,
+            foreground=self._fg,
             command=self._show_handle_plots_view
         )
 
@@ -60,18 +71,20 @@ class PlotView():
     
     def _initialize_add_tree(self):
 
-        label = ttk.Label(master=self._frame, text="Syötä puun tiedot:")
-        label_sp = ttk.Label(master=self._frame, text="Puulaji:")
-        label_d = ttk.Label(master=self._frame, text="Läpimitta (cm):")
-        label_h = ttk.Label(master=self._frame, text="Pituus (m):")
+        label = ttk.Label(master=self._frame, text="Syötä puun tiedot:", font=self._font, foreground=self._fg)
+        label_sp = ttk.Label(master=self._frame, text="Puulaji:", font=self._font, foreground=self._fg)
+        label_d = ttk.Label(master=self._frame, text="Läpimitta (cm):", font=self._font, foreground=self._fg)
+        label_h = ttk.Label(master=self._frame, text="Pituus (m):", font=self._font, foreground=self._fg)
 
         self._sp_entry = ttk.Entry(master=self._frame)
         self._h_entry = ttk.Entry(master=self._frame)
         self._d_entry = ttk.Entry(master=self._frame)
 
-        add_tree_button = ttk.Button(
+        add_tree_button = Tk.Button(
             master=self._frame,
             text="Lisää puu",
+            font=self._font,
+            foreground=self._fg,
             command=self._handle_add_tree)
 
         label.grid(columnspan=2, row=1, column=0,
