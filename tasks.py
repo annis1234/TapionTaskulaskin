@@ -27,3 +27,7 @@ def coverage_report(ctx):
 @task
 def lint(ctx):
     ctx.run("pylint src")
+
+@task
+def build(ctx):
+    ctx.run("pytest src/build.py", pty=True)
