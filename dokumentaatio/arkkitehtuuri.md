@@ -2,6 +2,10 @@
 
 ## Rakenne
 
+Ohjelma sisältää hakemistot ui, repositories, services ja entities. Hakemisto ui sisältää ohjelman käyttöliittymän koodin ja services sovelluslogiikkaa hoitavan koodin. Hakemiston repositories sisältävä koodi vastaa tiedon tallentamisesta, ja entities sisältää sovelluksen tietokohteita kuvaavat luokat.
+
+Sovelluksen rakenne luokkakaaviona:
+
 ![Luokkakaavio](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/luokkakaavio.png)
 
 ## Käyttöliittymä
