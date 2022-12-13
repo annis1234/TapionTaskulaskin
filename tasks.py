@@ -30,4 +30,4 @@ def lint(ctx):
 
 @task
 def build(ctx):
-    ctx.run("pytest src/build.py", pty=True)
+    ctx.run("python3 src/build.py", pty=True)

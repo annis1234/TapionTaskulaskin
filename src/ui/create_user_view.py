@@ -14,7 +14,6 @@ class CreateUserView:
             root: Tkinter-ikkuna näkymän alustamiseen
             handle_show_login_view: Metodi, joka hoitaa näkymän vaihtamisen kirjautumisnäkymään siirryttäessä
             handle_create_user: Metodi, jota kutsutaan kun uusi käyttäjä luodaan
-
         """
 
         self._root = root
