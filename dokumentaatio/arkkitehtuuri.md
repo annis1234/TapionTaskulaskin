@@ -10,18 +10,32 @@ Käyttöliittymä sisältää viisi näkymää:
 
 - Sisäänkirjautuminen
 - Uuden käyttäjän luominen
-- Koealalistaus ja koealan lisääminen
-- Puiden lisääminen koealalle
-- Koealan tietojen katselu
+- Olemassa olevien koealatiedostojen listaus ja uuden tiedoston luominen
+- Puiden lisääminen valittuu koealatiedostoon
+- Valitun koealan puustotietojen katselu
 
-Näkymät ovat eriytettyinä omiin luokkiinsa. Luokka UI vastaa näkymien 
-esittämisestä ja niiden vaihtamisesta. Käyttöliittymän luokat käyttävät 
+Näkymät ovat eriytettyinä omiin luokkiinsa. Luokka UI vastaa näkymien  esittämisestä ja niiden vaihtamisesta. Käyttöliittymän luokat käyttävät 
 PlotService-luokan metodeja toiminnallisuuksien toteuttamiseen.
 
 ## Sovelluslogiikka
 
-Sovelluksen keskeiset luokat ovat User ja Tree, jotka vastaavat sovelluksen käyttäjän ja sovelluksen kautta luotujen puiden
-kuvaamisesta.
+Sovelluksen keskeiset luokat ovat User ja Tree, jotka vastaavat sovelluksen käyttäjän ja sovelluksen kautta luotujen puiden kuvaamisesta. Luokka PlotService toteuttaa sovelluksen toiminnallisuudet. Sovelluksen keskeisimmät toiminnallisuudet ovat:
+
+- Käyttäjän luominen
+- Sisäänkirjautuminen olemassaolevalla tunnuksella ja salasanalla
+- Koealatiedoston luominen
+- Puun tallentaminen koealalle
+- Valitun koealan puustotietojen laskeminen 
+
+PlotService-luokka sisältää metodit jokaisen toiminnallisuuden toteuttamiseksi. Tiedostojen käsittelystä vastaavat PlotRepository- ja UserRepository-luokat
+
+## Tiedon pysyväistallennus
+
+Tiedon tallentamisesta vastaavat luokat PlotRepository ja UserRepository.
+
+Puut tallennetaan csv-tiedostoon, jonka nimen käyttäjä määrittelee. Tiedosto tallennetaan erillisessä konfiguraatiotiedostossa määritellyn polun mukaisesti data/plots-hakemistoon.
+
+Käyttäjän tallentamiseen käytetään SQLite-tietokantaa, joka alustetaan initialize_database.py-tiedostossa.
 
 ## Päätoiminnallisuudet
 
