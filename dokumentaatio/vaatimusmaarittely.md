@@ -30,8 +30,8 @@ käyttäjä.
 
 
 - Sovelluksella on graafinen käyttöliittymä (TEHTY)
-- Käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan
-  - Salasanan on oltava vähintään 8 merkkiä pitkä ja sen tulee sisältää:
+- Käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan (TEHTY)
+  - Salasanan on oltava vähintään 6 merkkiä pitkä ja sen tulee sisältää:
     - iso kirjain
     - pieni kirjain
     - numero
@@ -39,15 +39,15 @@ käyttäjä.
 
 ### Kirjautumisen jälkeen
 
-- Käyttäjä näkee tallentamansa koealat
-- Käyttäjä pystyy lisäämään koealan (TEHTY)
+- Käyttäjä näkee listauksen tallennetuista koealoista (TEHTY)
+- Käyttäjä pystyy lisäämään uuden koealan (TEHTY)
 - Käyttäjä pystyy tallentamaan koealalle puita (TEHTY)
 - Käyttäjä pystyy tyhjentämään koealan (TEHTY)
 - Käyttäjä näkee tulosteen koealan puista lasketuista keskitunnuksista 
 (TEHTY)
 - Käyttäjä pystyy siirtymään koealan tiedoista takaisin koealalistaukseen, 
 ja luomaan/valitsemaan toisen koealan (TEHTY)
-- Käyttäjä voi kirjautua ulos järjestelmästä
+- Käyttäjä voi kirjautua ulos järjestelmästä (TEHTY)
 
 ## Jatkokehitysideoita
 
