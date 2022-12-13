@@ -34,9 +34,11 @@ class PlotRepository():
     def return_plots(self):
         """Palauttaa kaikkien olemassa olevien koealojen nimet
         Returns:
-            Lista data/plots-hakemistossa sijaitsevista tiedostoista, poislukien piilotetut tai testejä varten luodut tiedostot
+            Lista data/plots-hakemistossa sijaitsevista tiedostoista, 
+            poislukien piilotetut tai testejä varten luodut tiedostot
         """
-        return [file for file in os.listdir(PLOT_FILE_PATH) if not (file.startswith(".") or file.startswith("test_"))]
+        return [file for file in os.listdir(PLOT_FILE_PATH)
+                if not (file.startswith(".") or file.startswith("test_"))]
 
     def find_all_trees(self):
         """Palauttaa kaikki koealalle tallennetut puut

@@ -1,3 +1,4 @@
+import string
 from entities.tree import Tree
 from entities.user import User
 import string
@@ -18,7 +19,8 @@ class PlotService():
     """Sovelluslogiikasta vastaava luokka
     """
 
-    def __init__(self, plot_repository=default_plot_repository, user_repository=default_user_repository):
+    def __init__(self, plot_repository=default_plot_repository,
+                    user_repository=default_user_repository):
         """Luokan konstruktori
 
         Args:
@@ -27,6 +29,7 @@ class PlotService():
         """
         self._plot_repository = plot_repository
         self._user_repository = user_repository
+        self._user = None
 
     def create_plot(self, plot_filename):
         """Luo uuden koealan csv-tiedostona
@@ -60,14 +63,14 @@ class PlotService():
     def create_tree(self, tree: Tree):
         """Luo puun ja lisää sen koealalle
 
-        Args: 
+        Args:
             Tree-olio, luetaan käyttäjältä
         """
         self._plot_repository.create_tree(tree)
 
     def return_trees(self):
         """Hakee kaikki koealalle tallennetut puut
-        
+
         Returns:
             Palauttaa listan koealalle tallennetuista puista
         """
@@ -113,7 +116,7 @@ class PlotService():
     def main_tree_sp(self):
         """Laskee koelana puuston pääpuulajin
 
-        Returns: 
+        Returns:
             Palauttaa koealan puuston pääpuulajin
         """
         trees = self.return_trees()
@@ -193,13 +196,13 @@ class PlotService():
 
         if len(password) < 6:
             return False
-        elif not any(char.isdigit() for char in password):
+        if not any(char.isdigit() for char in password):
             return False
-        elif not any(char.isupper() for char in password):
+        if not any(char.isupper() for char in password):
             return False
-        elif not any(char.islower() for char in password):
+        if not any(char.islower() for char in password):
             return False
-        elif not any(char in string.punctuation for char in password):
+        if not any(char in string.punctuation for char in password):
             return False
 
 
