@@ -20,7 +20,7 @@ class PlotListView:
 
 
     def pack(self):
-        self._frame.place(relx=0.5, rely=0, anchor="n")
+        self._frame.pack()
 
     def destroy(self):
         self._frame.destroy()
@@ -41,7 +41,7 @@ class PlotListView:
 
         open_plot_button.grid(row=0,column=1, pady=5, sticky=constants.EW)
 
-        plot_frame.pack(fill=constants.X)
+        plot_frame.pack()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -71,7 +71,7 @@ class HandlePlotsView:
         self._initialize()
     
     def pack(self):
-        self._frame.place(relx=0.5, rely=1, anchor="s")
+        self._frame.place(relx=0.5, rely=0.5 ,anchor="center")
 
     def destroy(self):
         self._frame.destroy()
@@ -93,6 +93,12 @@ class HandlePlotsView:
     def _initialize(self):
 
         self._frame = ttk.Frame(master=self._root)
+        self._plot_list_frame = ttk.Frame(master=self._frame)
+
+        self._plot_list_frame.grid(
+            padx= 5,
+            pady = 5,
+            sticky=constants.W)
 
         self._initialize_plot_list()
         self._initialize_create_plot()
