@@ -7,11 +7,26 @@ def get_user_by_row(row):
 
 
 class UserRepository:
+    """Käyttäjätietoja käsittelevästä tietokannasta vastaava luokka
+    """
 
     def __init__(self, connection):
+        """Luokan konstruktori
+
+        Args:
+            connection: Connection-olio tietokantayhteyden muodostamista varten
+        """
         self._connection = connection
 
     def create(self, user):
+        """Luo ja lisää uuden käyttäjän tietokantaan
+
+        Args:
+            user: Uusi käyttäjä, joka tallennetaan
+        Returns:
+            Palauttaa tallennetun käyttäjän
+
+        """
         cursor = self._connection.cursor()
         cursor.execute(
             "insert into users (username, password) values(?,?)",
@@ -29,6 +44,10 @@ class UserRepository:
         return get_user_by_row(row)
 
     def find_all(self):
+        """Hakee kaikki tallennetut käyttäjät tietokannasta
+        Returns:
+            Palauttaa listan tietokannan käyttäjistä User-olioina
+        """
         cursor=self._connection.cursor()
         cursor.execute("select * from users")
         rows=cursor.fetchall()
@@ -36,6 +55,8 @@ class UserRepository:
         return list(map(get_user_by_row, rows))
 
     def delete_all(self):
+        """Poistaa kaikki käyttäjät tietokannasta
+        """
         cursor=self._connection.cursor()
         cursor.execute("delete from users")
         self._connection.commit()

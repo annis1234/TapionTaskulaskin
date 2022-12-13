@@ -1,8 +1,23 @@
 from math import pi
 
 class Tree():
+    """Yksittäistä puuta kuvaava luokka
+
+    Attributes:
+        tree_sp: Puulaji
+        tree_diameter: Puun läpimitta
+        tree_heigth: Puun pituus
+    """
 
     def __init__(self, tree_sp: str, tree_diameter: int, tree_height: int):
+        """Konstruktori, joka luo uuden Tree-olion
+        
+        Args:
+            tree_sp: Puulaji, luetaan käyttäjältä
+            tree_diameter: Puun läpimitta, luetaan käyttäjältä
+            tree_height: Puun pituus, luetaan käyttäjältä
+
+        """
         self.tree_sp = tree_sp
         self.tree_diameter = tree_diameter
         self.tree_height = tree_height

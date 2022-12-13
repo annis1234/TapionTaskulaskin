@@ -5,29 +5,52 @@ from config import PLOT_FILE_PATH
 
 
 class PlotRepository():
+    """Koeala-tietokantoja käsittelevä luokka
+    """
 
     def __init__(self):
+        """Luokan konsruktori
+        """
         self._plot_filename = None
         self._file_path = None
 
     def create_plot(self, file_name):
+        """Luo uuden koealan csv-tiedostona
+        Args:
+            file_name: Koealatiedoston nimi, luetaan käyttäjältä
+        """
         self._plot_filename = f"{file_name}.csv"
         self._file_path = os.path.join(PLOT_FILE_PATH, self._plot_filename)
         Path(self._file_path).touch()
 
     def select_plot(self, plot_name):
+        """Asettaa käyttäjän valitseman koealatiedoston nimen polkuun
+        Args:
+            plot_name: Valitun koealan nimi, luetaan käyttäjältä
+        """
         self._plot_filename = f"{plot_name}.csv"
         self._file_path = os.path.join(PLOT_FILE_PATH, self._plot_filename)
 
     def return_plots(self):
+        """Palauttaa kaikkien olemassa olevien koealojen nimet
+        Returns:
+            Lista data/plots-hakemistossa sijaitsevista tiedostoista, poislukien piilotetut tai testejä varten luodut tiedostot
+        """
         return [file for file in os.listdir(PLOT_FILE_PATH) if not (file.startswith(".") or file.startswith("test_"))]
-        # FIX: filter test plots
 
-    def find_all(self):
+    def find_all_trees(self):
+        """Palauttaa kaikki koealalle tallennetut puut
+        """
         return self._read()
 
-    def create(self, tree: Tree):
-        trees = self.find_all()
+    def create_tree(self, tree: Tree):
+        """Luo ja lisää uuden puun koealalle
+        Args:
+            tree: Tree-olio, tiedot luetaan käyttäjältä
+        Returns:
+            Palauttaa luodun Tree-olion
+        """
+        trees = self.find_all_trees()
         trees.append(tree)
         self._write(trees)
         return tree

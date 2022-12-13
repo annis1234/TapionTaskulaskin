@@ -11,6 +11,7 @@ class CreateUserView:
         self._handle_create_user = handle_create_user
         self._handle_show_login_view = handle_show_login_view
         self._frame = None
+        self._plot_service = PLOT_SERVICE
         self._username_entry = None
         self._password_entry = None
         self._error_variable = None
@@ -32,31 +33,20 @@ class CreateUserView:
         password = self._password_entry.get()
 
 
-        if self._check_password(password) == False:
+        if self._plot_service.validate_password(password) == False:
+            self._show_error(f"Salasanan on oltava vähintään\n 6 merkkiä pitkä, ja sen tulee sisältää:\n\
+            - Yksi pieni kirjain\n\
+            - Yksi iso kirjain\n\
+            - Yksi numero\n\
+            - Yksi erikoismerkki")
             return
 
         try:
-            PLOT_SERVICE.create_user(username, password)
+            self._plot_service.create_user(username, password)
             self._handle_create_user()
         except UsernameExistsError:
             self._show_error(f"Käyttäjätunnus {username} on jo käytössä!")
 
-    def _check_password(self, password):
-        if len(password) < 8:
-            self._show_error("Salasanan täytyy olla yli 8 merkkiä!")
-            return False
-        elif not any(char.isdigit() for char in password):
-            self._show_error("Salasanan täytyy sisältää numero!")
-            return False
-        elif not any(char.isupper() for char in password):
-            self._show_error("Salasanan täytyy sisältää vähintään yksi iso kirjain!")
-            return False
-        elif not any(char.islower() for char in password):
-            self._show_error("Salasanan täytyy sisältää vähitnään yksi pieni kirjain!")
-            return False
-        elif not any(char in string.punctuation for char in password):
-            self._show_error("Salasanan täytyy sisältää vähintään yksi erikoismerkki!")
-            return False
 
     def _show_error(self, message):
         self._error_variable.set(message)
@@ -75,6 +65,7 @@ class CreateUserView:
         self._error_label = ttk.Label(
             master=self._frame,
             textvariable=self._error_variable,
+            font = self._font,
             foreground="red"
         )
 
@@ -83,15 +74,11 @@ class CreateUserView:
         password_label = ttk.Label(master=self._frame, text="Salasana", font=self._font, foreground=self._fg)
         self._password_entry = ttk.Entry(master=self._frame)
 
-        username_label.grid(
-            row=1, column=0, sticky=constants.W, padx=10, pady=10)
-        self._username_entry.grid(
-            row=2, column=0, sticky=constants.W, padx=10, pady=10)
+        username_label.grid(sticky=constants.W, padx=5, pady=5)
+        self._username_entry.grid(sticky=constants.W, padx=5, pady=5)
 
-        password_label.grid(
-            row=3, column=0, sticky=constants.W, padx=10, pady=10)
-        self._password_entry.grid(
-            row=4, column=0, sticky=constants.W, padx=10, pady=10)
+        password_label.grid(sticky=constants.W, padx=5, pady=5)
+        self._password_entry.grid(sticky=constants.W, padx=5, pady=5)
 
         create_user_button = Tk.Button(
             master=self._frame,
@@ -107,7 +94,7 @@ class CreateUserView:
             font = self._font,
             foreground=self._fg)
 
-        create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
-        go_back_button.grid(padx=5, pady=5, sticky=constants.EW)
+        create_user_button.grid(padx=5, pady=5, sticky=constants.E)
+        go_back_button.grid(padx=5, pady=5, sticky=constants.E)
 
         self._hide_error()

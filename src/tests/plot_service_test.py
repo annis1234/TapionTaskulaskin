@@ -10,7 +10,7 @@ class TestPlot(unittest.TestCase):
         self._plot_service.create_plot("test_plot")
         self._plot_service.clear_plot()
 
-    def test_create(self):
+    def test_create_tree(self):
         tree1 = Tree("Mänty", 28, 30)
         self._plot_service.create_tree(tree1)
         trees = self._plot_service.return_trees()

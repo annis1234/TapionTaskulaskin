@@ -4,14 +4,15 @@ from services.plot_service import PLOT_SERVICE
 
 
 class PlotListView:
+    """Koealalistauksesta vastaava näkymä
+    """
 
     def __init__(self, root, plots):
         self._root = root
         self._plots = plots
         self._frame = None
         self._plot_service = PLOT_SERVICE
-#        self._handle_open_plot = handle_open_plot
-
+# FIX       self._handle_open_plot = handle_open_plot
         self._font = "Comic Sans MS", 15
         self._fg = "green"
 
