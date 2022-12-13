@@ -202,9 +202,6 @@ class PlotService():
             return False
         if not any(char in string.punctuation for char in password):
             return False
-
-        else:
-            return True
-
+        return True
 
 PLOT_SERVICE = PlotService()

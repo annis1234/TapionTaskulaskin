@@ -6,7 +6,7 @@ from services.plot_service import PLOT_SERVICE
 class PlotListView:
     """Koealalistauksesta vastaava näkymä
     """
-
+    
     def __init__(self, root, plots):
         self._root = root
         self._plots = plots
@@ -16,7 +16,6 @@ class PlotListView:
         self._fg = "green"
 
         self._initialize()
-
 
     def pack(self):
         self._frame.pack()

@@ -16,7 +16,7 @@ IMG_PATH = os.path.join(IMG_DIRNAME, "..", "images", "tree.png")
 IMG = ImageTk.PhotoImage(Image.open(IMG_PATH))
 HEADER_IMG = ttk.Label(image=IMG)
 HEADER_IMG.place(x=50,y=60)
-HEADER_CRED = ttk.Label(text="Kuva: https://pixabay.com/", 
+HEADER_CRED = ttk.Label(text="Kuva: https://pixabay.com/",
                         font=("Comic Sans MS", 10),
                         foreground="green",
                         cursor="hand1")

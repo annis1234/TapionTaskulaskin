@@ -5,7 +5,7 @@ from config import PLOT_FILE_PATH
 
 
 class PlotRepository():
-    """Koeala-tietokantoja käsittelevä luokka
+    """Koealatiedostoja käsittelevä luokka
     """
 
     def __init__(self):
@@ -33,8 +33,9 @@ class PlotRepository():
 
     def return_plots(self):
         """Palauttaa kaikkien olemassa olevien koealojen nimet
+
         Returns:
-            Lista data/plots-hakemistossa sijaitsevista tiedostoista, 
+            Lista data/plots-hakemistossa sijaitsevista tiedostoista,
             poislukien piilotetut tai testejä varten luodut tiedostot
         """
         return [file for file in os.listdir(PLOT_FILE_PATH)
