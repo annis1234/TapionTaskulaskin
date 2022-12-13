@@ -1,7 +1,7 @@
 # Tapion Taskulaskin
 
 Tapion taskulaskin on aputyökalu metsänmittaamiseen. Sovelluksen 
-tämänhetkisessä versiossa käyttäjä voi luoda koealoja csv-tiedostona ja 
+tämänhetkisessä versiossa käyttäjä voi sisäänkirjautumisen jälkeen luoda koealoja csv-tiedostona ja 
 lisätä valitsemalleen koealalle puita. Puun yhteydessä tallennetaan puulaji sekä puun
 läpimitta ja pituus. Sovellus laskee ja palauttaa valitun 
 koealan puista lasketut koealakohtaiset keskitunnukset: pääpuulajin,
