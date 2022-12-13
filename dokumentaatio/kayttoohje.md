@@ -28,6 +28,6 @@ Sovellus käynnistyy sisäänkirjautumisnäkymään. Jos käyttäjällä on jo o
 
 Kirjautumisen jälkeen aukeaa näkymä, jossa käyttäjä voi luoda uuden koealatiedoston tai avata jo olemassa olevan tiedoston. Näkymässä on listaus mahdollisesti jo olemassaolevista tiedostoista. Tiedosto avataan kirjoittamalla halutun tiedoston nimi ilman csv-päätettä "Avaa koeala"- syötekenttään ja klikkaamalla "Avaa koeala". Uloskirjautuminen tapahtuu klikkaamalla "Kirjaudu ulos".
 
-## Puun lisääminen koealalle
+## Puun lisääminen koealalle ja koealan tietojen katselu
 
-Koealatiedoston valittuaan käyttäjä voi lisätä puita koealalle. Puun tiedot (puulaji, läpimitta ja pituus) syötetään syötekenttiin, ja klikataan "Lisää puu". Käyttäjä voi tyhjentää koealan klikkaamalla "Tyhjennä koeala". Koealan puustotiedot avautuvat klikkaamalla "Näytä koealan tiedot". Käyttäjä voi siirtyä takaisin koealalistaukseen klikkaamalla "Takaisin".
+Koealatiedoston valittuaan käyttäjä voi lisätä puita koealalle. Puun tiedot (puulaji, läpimitta ja pituus) syötetään syötekenttiin, ja klikataan "Lisää puu". Käyttäjä voi tyhjentää koealan klikkaamalla "Tyhjennä koeala". Koealan puustotiedot avautuvat klikkaamalla "Näytä koealan tiedot". Käyttäjä voi siirtyä takaisin puun lisäämisnäkymään sekä puun lisäämisnäkymästä edelleen koealalistaukseen klikkaamalla "Takaisin".
