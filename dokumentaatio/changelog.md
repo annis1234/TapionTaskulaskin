@@ -26,8 +26,7 @@ toimii
 
 ## Viikko 6
 
-- Käyttäjätunnuksen luominen ja sisäänkirjautuminen
+- Käyttäjä voi luoda käyttäjätunnuksen ja kirjautua sillä sisään
 - Testattu, että uuden käyttäjän luominen onnistuu
-- Lisätty graafiseen käyttöliittymään näkymät uusille toiminnallisuuksille
 - Lisätty koealan luomisesta vastaavaan näkymään listaus luoduista tiedostoista
 - Muotoiltu sovelluksen ulkoasua
