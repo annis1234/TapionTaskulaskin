@@ -20,12 +20,14 @@ poetry run invoke build
 poetry run invoke start
 ```
 
-## Komentorivitoiminnot
+## Kirjautuminen ja uuden käyttäjätunnuksen luominen
 
-### Ohjelman suorittaminen
+Sovellus käynnistyy sisäänkirjautumisnäkymään. Jos käyttäjällä on jo olemassaoleva käyttäjätunnus, sovellukseen kirjaudutaan kirjoittamalla käyttäjätunnus ja salasana syötekenttiin ja painamalla "Kirjaudu sisään". Jos käyttäjällä ei ole käyttäjätunnusta, hän voi luoda sellaisen painamalla "Uusi käyttäjä". Uuden käyttäjän luomisnäkymässä käyttäjä kirjoittaa haluamansa tunnuksen ja salasanan, ja klikkaa "Luo uusi". Tunnuksen luomisen jälkeen sovellus kirjaa käyttäjän automaattisesti sisään.
 
-Ohjelma suoritetaan komennolla:
+## Koealatiedostojen käsittely
 
-```bash
-poetry run invoke start
-```
+Kirjautumisen jälkeen aukeaa näkymä, jossa käyttäjä voi luoda uuden koealatiedoston tai avata jo olemassa olevan tiedoston. Näkymässä on listaus mahdollisesti jo olemassaolevista tiedostoista. Tiedosto avataan kirjoittamalla halutun tiedoston nimi ilman csv-päätettä "Avaa koeala"- syötekenttään ja klikkaamalla "Avaa koeala". Uloskirjautuminen tapahtuu klikkaamalla "Kirjaudu ulos".
+
+## Puun lisääminen koealalle
+
+Koealatiedoston valittuaan käyttäjä voi lisätä puita koealalle. Puun tiedot (puulaji, läpimitta ja pituus) syötetään syötekenttiin, ja klikataan "Lisää puu". Käyttäjä voi tyhjentää koealan klikkaamalla "Tyhjennä koeala". Koealan puustotiedot avautuvat klikkaamalla "Näytä koealan tiedot". Käyttäjä voi siirtyä takaisin koealalistaukseen klikkaamalla "Takaisin".
