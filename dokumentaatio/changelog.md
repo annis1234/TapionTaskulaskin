@@ -28,5 +28,5 @@ toimii
 
 - Käyttäjä voi luoda käyttäjätunnuksen ja kirjautua sillä sisään
 - Testattu, että uuden käyttäjän luominen onnistuu
-- Lisätty koealan luomisesta vastaavaan näkymään listaus luoduista tiedostoista
+- Lisätty koealojen käsittelystä vastaavaan näkymään listaus luoduista tiedostoista
 - Muotoiltu sovelluksen ulkoasua
