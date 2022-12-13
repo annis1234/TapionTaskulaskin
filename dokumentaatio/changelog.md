@@ -23,3 +23,11 @@ lisäämään puita valitulle koealalle
 puiden lisäämisnäkymä sekä keskitunnukset näyttävä näkymä
 - Testattu, että useamman tiedoston luominen ja niiden välillä siirtyminen 
 toimii
+
+## Viikko 6
+
+- Käyttäjätunnuksen luominen ja sisäänkirjautuminen
+- Testattu, että uuden käyttäjän luominen onnistuu
+- Lisätty graafiseen käyttöliittymään näkymät uusille toiminnallisuuksille
+- Lisätty koealan luomisesta vastaavaan näkymään listaus luoduista tiedostoista
+- Muotoiltu sovelluksen ulkoasua
