@@ -6,8 +6,7 @@ lisätä valitsemalleen koealalle puita. Puun yhteydessä tallennetaan puulaji s
 läpimitta ja pituus. Sovellus laskee ja palauttaa valitun 
 koealan puista lasketut koealakohtaiset keskitunnukset: pääpuulajin,
  keskiläpimitan, keskipituuden ja hehtaarikohtaisen tilavuuden. Tällä hetkellä oletuksena on, että jokainen koeala on yhden 
-hehtaarin 
-kokoinen.
+ hehtaarin kokoinen.
 
 Koeala nimetään ja valitaan kirjoittamalla sen nimi ilman .csv-päätettä.
 
@@ -20,6 +19,8 @@ Koeala nimetään ja valitaan kirjoittamalla sen nimi ilman .csv-päätettä.
 [Changelog](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 
 [Arkkitehtuurikuvaus](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
+
+[Käyttöohje](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kayttoohje.md)
 
 ## Asennus
 
