@@ -58,6 +58,8 @@ class PlotRepository():
         return tree
 
     def _ensure_file_exists(self):
+        """Varmistaa ennen tiedoston käsittelyä, että tiedosto on olemassa
+        """
         Path(self._file_path).touch()
 
     def _read(self):
@@ -85,6 +87,8 @@ class PlotRepository():
                 file.write(row+"\n")
 
     def clear_plot(self):
+        """Tyhjentää koealan
+        """
         open(self._file_path, "w", encoding="utf-8").close()
 
 PLOT_REPOSITORY = PlotRepository()

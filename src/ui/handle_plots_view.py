@@ -12,7 +12,6 @@ class PlotListView:
         self._plots = plots
         self._frame = None
         self._plot_service = PLOT_SERVICE
-# FIX       self._handle_open_plot = handle_open_plot
         self._font = "Comic Sans MS", 15
         self._fg = "green"
 
@@ -27,19 +26,9 @@ class PlotListView:
 
     def _initialize_plot(self, plot):
         plot_frame=ttk.Frame(master=self._frame)
+
         label=ttk.Label(master=plot_frame, text=plot, font=self._font, foreground=self._fg)
-
-        open_plot_button = Tk.Button(
-            master=plot_frame,
-            text="Avaa koeala",
-            font=("Comic Sans MS", 10),
-            foreground=self._fg,
-#            command=lambda:self._handle_open_plot(plot)
-        )
-
         label.grid(row=0, column=0, sticky=constants.E)
-
-        open_plot_button.grid(row=0,column=1, pady=5, sticky=constants.EW)
 
         plot_frame.pack()
 
@@ -84,8 +73,7 @@ class HandlePlotsView:
 
         self._plot_list_view = PlotListView(
             self._plot_list_frame,
-            plots,
- #           self._handle_open_plot
+            plots
         )
 
         self._plot_list_view.pack()

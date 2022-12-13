@@ -189,7 +189,7 @@ class PlotService():
     def validate_password(self, password):
         """Tarkastaa salasanan kelpoisuuden
         Returns:
-            False, jos ehdot eivät täyty
+            False, jos jokin ehdoista ei täyty
         """
 
         if len(password) < 6:
@@ -202,6 +202,9 @@ class PlotService():
             return False
         if not any(char in string.punctuation for char in password):
             return False
+
+        else:
+            return True
 
 
 PLOT_SERVICE = PlotService()
