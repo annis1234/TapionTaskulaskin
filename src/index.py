@@ -1,8 +1,8 @@
 from tkinter import Tk, ttk
 import os
 import webbrowser
-from ui.UI import UI
 from PIL import ImageTk, Image
+from ui.UI import UI
 
 WINDOW = Tk()
 WINDOW.title("Tapion taskulaskin")
@@ -17,8 +17,7 @@ IMG = ImageTk.PhotoImage(Image.open(IMG_PATH))
 HEADER_IMG = ttk.Label(image=IMG)
 HEADER_IMG.place(x=50,y=60)
 
-HEADER_CRED = ttk.Label(
-                        text="Kuva: https://pixabay.com/", 
+HEADER_CRED = ttk.Label(text="Kuva: https://pixabay.com/", 
                         font=("Comic Sans MS", 10),
                         foreground="green",
                         cursor="hand1")

@@ -1,7 +1,6 @@
 import string
 from entities.tree import Tree
 from entities.user import User
-import string
 
 from repositories.plot_repository import (
     PLOT_REPOSITORY as default_plot_repository)
@@ -163,7 +162,6 @@ class PlotService():
 
             Returns:
                 Logged in user as an User-object
-            
             Raises:
                 InvalidCredentialsError:
                     Error occurs in case of mismatch between username and password
