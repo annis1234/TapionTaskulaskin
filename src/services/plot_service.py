@@ -14,6 +14,9 @@ class InvalidCredentialsError(Exception):
 class UsernameExistsError(Exception):
     pass
 
+class ValueError(Exception):
+    pass
+
 class PlotService():
     """Sovelluslogiikasta vastaava luokka
     """
@@ -70,6 +73,16 @@ class PlotService():
         """
         self._plot_repository.create_tree(tree)
 
+    def validate_tree(self, tree):
+        if not tree.tree_sp.isalpha():
+            raise ValueError
+
+        if not tree.tree_diameter.isdigit() or float(tree.tree_diameter) < 0:
+            raise ValueError
+
+        if not tree.tree_height.isdigit() or float(tree.tree_height) < 1.3:
+            raise ValueError
+
     def return_trees(self):
         """Hakee kaikki koealalle tallennetut puut
 
@@ -112,7 +125,7 @@ class PlotService():
         vol_sum = 0
         trees = self.return_trees()
         for tree in trees:
-            vol_sum += tree.tree_vol
+            vol_sum += tree.get_vol()
         return round(vol_sum, 3) * 50 # jos koealan pinta-ala 200m2
 
     def main_tree_sp(self):
@@ -209,7 +222,6 @@ class PlotService():
         Returns:
             False, jos jokin ehdoista ei täyty
         """
-
         if len(password) < 6:
             return False
         if not any(char.isdigit() for char in password):

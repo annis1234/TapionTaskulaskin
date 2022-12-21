@@ -1,7 +1,7 @@
 
 import tkinter as Tk
-from tkinter import ttk, constants
-from services.plot_service import PLOT_SERVICE
+from tkinter import ttk, constants, StringVar
+from services.plot_service import PLOT_SERVICE, ValueError
 from entities.tree import Tree
 
 
@@ -20,6 +20,9 @@ class PlotView():
         self._stand_data_frame = None
         self._stand_data_view = None
 
+        self._error_variable = None
+        self._error_label = None
+
         self._font = "Comic Sans MS", 15
         self._fg = "green"
 
@@ -34,6 +37,16 @@ class PlotView():
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         self._initialize_add_tree()
+
+        self._error_variable = StringVar(self._frame)
+
+        self._error_label = ttk.Label(
+            master = self._frame,
+            textvariable=self._error_variable,
+            foreground="red",
+            font=("Comic Sans MS",15)
+        )
+
 
         clear_plot_button = Tk.Button(
             master=self._frame,
@@ -69,6 +82,8 @@ class PlotView():
         show_handle_plots_view_button.grid(
             row=12, column=0, sticky=constants.W, padx=5, pady=5
         )
+
+        self._hide_error()
     
     def _initialize_add_tree(self):
 
@@ -111,10 +126,22 @@ class PlotView():
 
         tree = Tree(tree_sp, tree_d, tree_h, user)
 
-        self._plot_service.create_tree(tree)
+        try:
+            self._plot_service.validate_tree(tree)
+            self._plot_service.create_tree(tree)
+        except ValueError:
+            self._show_error("Tarkista syöttämäsi arvot!")
+
         self._sp_entry.delete(0, constants.END)
         self._h_entry.delete(0, constants.END)
         self._d_entry.delete(0, constants.END)
+
+    def _show_error(self, message):
+        self._error_variable.set(message)
+        self._error_label.grid()
+
+    def _hide_error(self):
+        self._error_label.grid_remove
 
     def _handle_clear_plot(self):
         self._plot_service.clear_plot()
