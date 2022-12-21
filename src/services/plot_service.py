@@ -77,10 +77,10 @@ class PlotService():
         if not tree.tree_sp.isalpha():
             raise ValueError
 
-        if not tree.tree_diameter.isdigit() or float(tree.tree_diameter) < 0:
+        if not tree.tree_diameter.replace(".", "", 1).isdigit() or float(tree.tree_diameter) < 0:
             raise ValueError
 
-        if not tree.tree_height.isdigit() or float(tree.tree_height) < 1.3:
+        if not tree.tree_height.replace(".", "", 1).isdigit() or float(tree.tree_height) < 1.3:
             raise ValueError
 
     def return_trees(self):
