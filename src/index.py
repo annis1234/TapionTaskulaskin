@@ -24,7 +24,7 @@ HEADER_CRED = ttk.Label(text="Kuva: https://pixabay.com/",
 HEADER_CRED.place(x=50, y=300)
 HEADER_CRED.bind("<Button-1>", lambda e: webbrowser.open_new_tab("https://pixabay.com/"))
 
-WINDOW.geometry("700x700")
+WINDOW.geometry("900x800")
 
 UI = UI(WINDOW)
 UI.start()

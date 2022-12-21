@@ -50,18 +50,18 @@ class TestPlot(unittest.TestCase):
 
     def test_handle_two_plots(self):
         self._plot_service.create_plot("test_plot2")
-        self._plot_service.select_plot("test_plot2")
+        self._plot_service.select_plot("test_plot2.csv")
         tree1 = Tree("Mänty", 20, 20, self.user)
         self._plot_service.create_tree(tree1)
         self.assertEqual(len(self._plot_service.return_trees()), 1)
 
-        self._plot_service.select_plot("test_plot")
+        self._plot_service.select_plot("test_plot.csv")
         tree2 = Tree("Kuusi", 25, 25, self.user)
         self._plot_service.create_tree(tree2)
 
         self.assertEqual(len(self._plot_service.return_trees()), 1)
 
-        self._plot_service.select_plot("test_plot2")
+        self._plot_service.select_plot("test_plot2.csv")
         self._plot_service.clear_plot()
 
         self.assertEqual(len(self._plot_service.return_trees()), 0)

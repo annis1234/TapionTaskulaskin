@@ -7,11 +7,13 @@ class PlotListView:
     """Koealalistauksesta vastaava näkymä
     """
     
-    def __init__(self, root, plots):
+    def __init__(self, root, plots, handle_open_plot, remove_plot):
         self._root = root
         self._plots = plots
         self._frame = None
         self._plot_service = PLOT_SERVICE
+        self._handle_open_plot = handle_open_plot
+        self._remove_plot = remove_plot
         self._font = "Comic Sans MS", 15
         self._fg = "green"
 
@@ -28,6 +30,38 @@ class PlotListView:
 
         label=ttk.Label(master=plot_frame, text=plot, font=self._font, foreground=self._fg)
         label.grid(row=0, column=0, sticky=constants.E)
+
+        open_plot_button = Tk.Button(
+            master=plot_frame,
+            text="Avaa koeala",
+            font=self._font,
+            foreground=self._fg,
+            command=lambda: self._handle_open_plot(plot)
+        )
+
+        remove_plot_button = Tk.Button(
+            master=plot_frame,
+            text="Poista koeala",
+            font =self._font,
+            foreground=self._fg,
+            command=lambda: self._remove_plot(plot)
+        )
+
+        open_plot_button.grid(
+            row=0,
+            column=1,
+            padx=3,
+            pady=3,
+            sticky=constants.EW
+        )
+
+        remove_plot_button.grid(
+            row=0,
+            column=2,
+            padx=3,
+            pady=3,
+            sticky=constants.EW
+        )
 
         plot_frame.pack()
 
@@ -72,7 +106,9 @@ class HandlePlotsView:
 
         self._plot_list_view = PlotListView(
             self._plot_list_frame,
-            plots
+            plots,
+            self._handle_open_plot,
+            self._handle_remove_plot
         )
 
         self._plot_list_view.pack()
@@ -89,7 +125,6 @@ class HandlePlotsView:
 
         self._initialize_plot_list()
         self._initialize_create_plot()
-        self._initialize_select_plot()
 
         user = ttk.Label(
             master=self._frame,
@@ -97,7 +132,6 @@ class HandlePlotsView:
             font=self._font,
             foreground=self._fg
         )
-
 
         logout_button = Tk.Button(
             master = self._frame,
@@ -107,9 +141,8 @@ class HandlePlotsView:
             command=self._handle_logout
         )
 
-        user.grid(padx=5, pady=5, sticky=constants.W)
-        logout_button.grid(padx=5, pady=5, sticky=constants.W)
-
+        user.grid(padx=5, pady=5)
+        logout_button.grid(padx=5, pady=5)
 
     def _initialize_create_plot(self):
         plot_label = ttk.Label(master=self._frame, text="Koealan nimi:", font=self._font, foreground=self._fg)
@@ -125,30 +158,17 @@ class HandlePlotsView:
             command = self._handle_add_plot,
             foreground=self._fg)
 
-        create_plot_button.grid(padx=5, pady=5, sticky=constants.EW)
+        create_plot_button.grid(padx=5, pady=5)
 
-    def _initialize_select_plot(self):
-        select_plot_label = ttk.Label(master=self._frame, text="Avaa koeala (nimi):", font=self._font, foreground=self._fg)
-        self._select_plot_entry = ttk.Entry(master=self._frame)
-
-        select_plot_button = Tk.Button(
-            master = self._frame,
-            text = "Avaa koeala",
-            font=self._font,
-            command = self._handle_open_plot,
-            foreground=self._fg
-        )
-
-        select_plot_label.grid(padx=5, pady=5, sticky=constants.EW)
-        self._select_plot_entry.grid(padx=5, pady=5, sticky=constants.EW)
-        select_plot_button.grid(padx=5, pady=5, sticky=constants.EW)
-    
     def _handle_add_plot(self):
         self._plot_service.create_plot(self._plot_entry.get())
         self._plot_entry.delete(0, constants.END)
         self._initialize_plot_list()
 
-    def _handle_open_plot(self):
-        self._plot_service.select_plot(self._select_plot_entry.get())
-        self._select_plot_entry.delete(0, constants.END)
+    def _handle_open_plot(self, plot):
+        self._plot_service.select_plot(plot)
         self._open_plot_handler()
+
+    def _handle_remove_plot(self, plot):
+        self._plot_service.remove_plot(plot)
+        self._initialize_plot_list()
