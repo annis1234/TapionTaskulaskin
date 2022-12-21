@@ -113,7 +113,7 @@ class PlotService():
         trees = self.return_trees()
         for tree in trees:
             vol_sum += tree.tree_vol
-        return round(vol_sum, 3)
+        return round(vol_sum, 3) * 50 # jos koealan pinta-ala 200m2
 
     def main_tree_sp(self):
         """Laskee koelana puuston pääpuulajin

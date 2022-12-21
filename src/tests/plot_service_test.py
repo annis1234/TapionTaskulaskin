@@ -37,7 +37,7 @@ class TestPlot(unittest.TestCase):
         tree2 = Tree("Mänty", 20, 20, self.user)
         self._plot_service.create_tree(tree1)
         self._plot_service.create_tree(tree2)
-        self.assertEqual(self._plot_service.sum_vol(), 0.628)
+        self.assertEqual(self._plot_service.sum_vol(), 0.628*50)
 
     def test_main_tree_sp(self):
         tree1 = Tree("Mänty", 20, 20, self.user)
