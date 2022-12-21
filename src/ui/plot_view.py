@@ -47,7 +47,6 @@ class PlotView():
             font=("Comic Sans MS",15)
         )
 
-
         clear_plot_button = Tk.Button(
             master=self._frame,
             text="Tyhjennä koeala",

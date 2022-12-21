@@ -14,6 +14,9 @@ class InvalidCredentialsError(Exception):
 class UsernameExistsError(Exception):
     pass
 
+class ValueError(Exception):
+    pass
+
 class PlotService():
     """Sovelluslogiikasta vastaava luokka
     """
@@ -46,7 +49,7 @@ class PlotService():
             plot_filename: Valitun tiedoston nimi, luetaan käyttäjältä
         """
         self._plot_repository.select_plot(plot_filename)
-
+   
     def remove_plot(self, plot_filename):
         self._plot_repository.remove_plot(plot_filename)
 
