@@ -124,6 +124,21 @@ class PlotService():
             species.append(tree.tree_sp)
         return max(species, key=species.count)
 
+    def return_h(self):
+        h = []
+        trees = self._plot_repository.find_all_trees()
+        for tree in trees:
+            h.append(tree.tree_height)
+
+        return h
+        
+    def return_d(self):
+        d = []
+        trees =self._plot_repository.find_all_trees()
+        for tree in trees:
+            d.append(tree.tree_diameter)
+        return d
+
     def create_user(self, username, password, login=True):
         """Luo uuden käyttäjän
 
