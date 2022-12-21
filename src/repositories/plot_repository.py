@@ -63,10 +63,10 @@ class PlotRepository():
         self._write(trees)
         return tree
 
-    def ensure_file_exists(self, plot_filename):
-        """Varmistaa ennen tiedoston käsittelyä, että tiedosto on olemassa
-        """
-        return os.path.exists(self._file_path)
+ #   def ensure_file_exists(self, plot_filename):
+ #       """Varmistaa ennen tiedoston käsittelyä, että tiedosto on olemassa
+ #       """
+ #       return os.path.exists(self._file_path)
 
     def _read(self):
         trees = []

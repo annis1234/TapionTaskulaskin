@@ -1,7 +1,6 @@
 import tkinter as Tk
-from tkinter import ttk, constants
-from services.plot_service import PLOT_SERVICE
-
+from tkinter import ttk, constants, StringVar
+from services.plot_service import PLOT_SERVICE, ValueError
 
 class PlotListView:
     """Koealalistauksesta vastaava näkymä
@@ -14,6 +13,8 @@ class PlotListView:
         self._plot_service = PLOT_SERVICE
         self._handle_open_plot = handle_open_plot
         self._remove_plot = remove_plot
+        self._error_variable = None
+        self._error_label = None
         self._font = "Comic Sans MS", 15
         self._fg = "green"
 
@@ -126,6 +127,15 @@ class HandlePlotsView:
         self._initialize_plot_list()
         self._initialize_create_plot()
 
+        self._error_variable = StringVar(self._frame)
+
+        self._error_label = ttk.Label(
+            master = self._frame,
+            textvariable=self._error_variable,
+            foreground="red",
+            font=("Comic Sans MS",15)
+        )
+
         user = ttk.Label(
             master=self._frame,
             text=f"Käyttäjä: {self._user.username}",
@@ -144,6 +154,8 @@ class HandlePlotsView:
         user.grid(padx=5, pady=5)
         logout_button.grid(padx=5, pady=5)
 
+        self._hide_error()
+
     def _initialize_create_plot(self):
         plot_label = ttk.Label(master=self._frame, text="Koealan nimi:", font=self._font, foreground=self._fg)
         self._plot_entry = ttk.Entry(master=self._frame)
@@ -161,7 +173,11 @@ class HandlePlotsView:
         create_plot_button.grid(padx=5, pady=5)
 
     def _handle_add_plot(self):
-        self._plot_service.create_plot(self._plot_entry.get())
+
+        try:
+            self._plot_service.create_plot(self._plot_entry.get())
+        except ValueError:
+            self._show_error("Tarkista koealan nimi!")
         self._plot_entry.delete(0, constants.END)
         self._initialize_plot_list()
 
@@ -172,3 +188,11 @@ class HandlePlotsView:
     def _handle_remove_plot(self, plot):
         self._plot_service.remove_plot(plot)
         self._initialize_plot_list()
+
+
+    def _show_error(self, message):
+        self._error_variable.set(message)
+        self._error_label.grid()
+
+    def _hide_error(self):
+        self._error_label.grid_remove

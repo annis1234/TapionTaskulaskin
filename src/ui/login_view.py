@@ -34,7 +34,7 @@ class LoginView:
             PLOT_SERVICE.login(username, password)
             self._handle_login()
         except InvalidCredentialsError:
-            self._show_error("Pieleen meni! :( Yritä uuudestaan!")
+            self._show_error("Väärä käyttäjätunnus tai salasana! :( Yritä uuudestaan!")
     
     def _show_error(self, message):
         self._error_variable.set(message)

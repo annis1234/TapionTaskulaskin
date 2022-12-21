@@ -14,9 +14,6 @@ class InvalidCredentialsError(Exception):
 class UsernameExistsError(Exception):
     pass
 
-class ValueError(Exception):
-    pass
-
 class PlotService():
     """Sovelluslogiikasta vastaava luokka
     """
@@ -38,6 +35,8 @@ class PlotService():
         Args:
             plot_filename: tiedoston nimi, luetaan käyttäjältä
         """
+        if plot_filename == "":
+            raise ValueError
         self._plot_repository.create_plot(plot_filename)
 
     def select_plot(self, plot_filename):
@@ -47,7 +46,7 @@ class PlotService():
             plot_filename: Valitun tiedoston nimi, luetaan käyttäjältä
         """
         self._plot_repository.select_plot(plot_filename)
-    
+
     def remove_plot(self, plot_filename):
         self._plot_repository.remove_plot(plot_filename)
 
@@ -141,19 +140,19 @@ class PlotService():
         return max(species, key=species.count)
 
     def return_h(self):
-        h = []
+        tree_heights = []
         trees = self._plot_repository.find_all_trees()
         for tree in trees:
-            h.append(tree.tree_height)
+            tree_heights.append(tree.tree_height)
 
-        return h
-        
+        return tree_heights
+
     def return_d(self):
-        d = []
+        tree_diameters = []
         trees =self._plot_repository.find_all_trees()
         for tree in trees:
-            d.append(tree.tree_diameter)
-        return d
+            tree_diameters.append(tree.tree_diameter)
+        return tree_diameters
 
     def create_user(self, username, password, login=True):
         """Luo uuden käyttäjän
