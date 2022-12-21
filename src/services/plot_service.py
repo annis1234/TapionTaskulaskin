@@ -54,7 +54,7 @@ class PlotService():
         """Palauttaa kaikkien tallennettujen koealatiedostojen nimet
 
         Returns:
-            Tiedostojen nimet listana
+            Palauttaa tiedostojen nimet listana
 
         """
         return self._plot_repository.return_plots()

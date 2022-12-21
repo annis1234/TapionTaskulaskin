@@ -13,3 +13,6 @@ class User:
         """
         self.username = username
         self.password = password
+
+    def __str__(self):
+        return f"{self.username}"

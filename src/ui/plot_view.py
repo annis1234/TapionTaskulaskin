@@ -14,6 +14,7 @@ class PlotView():
         self._sp_entry = None
         self._d_entry = None
         self._h_entry = None
+        self._user = PLOT_SERVICE.get_current_user()
         self._handle_show_stand_data_view = handle_show_stand_data_view
         self._show_handle_plots_view = show_handle_plots_view
         self._stand_data_frame = None
@@ -106,8 +107,9 @@ class PlotView():
         tree_sp = self._sp_entry.get()
         tree_h = self._h_entry.get()
         tree_d = self._d_entry.get()
+        user = self._user
 
-        tree = Tree(tree_sp, tree_d, tree_h)
+        tree = Tree(tree_sp, tree_d, tree_h, user)
 
         self._plot_service.create_tree(tree)
         self._sp_entry.delete(0, constants.END)

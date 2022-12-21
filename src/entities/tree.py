@@ -9,7 +9,7 @@ class Tree():
         tree_heigth: Puun pituus
     """
 
-    def __init__(self, tree_sp: str, tree_diameter: int, tree_height: int):
+    def __init__(self, tree_sp: str, tree_diameter: int, tree_height: int, user):
         """Konstruktori, joka luo uuden Tree-olion
 
         Args:
@@ -23,6 +23,7 @@ class Tree():
         self.tree_height = tree_height
         self.tree_g = pi*(float(tree_diameter)/100/2)**2
         self.tree_vol = float(tree_height) * float(self.tree_g) * 0.5
+        self.user = user
 
     def __str__(self):
         return f"Puulaji: {self.tree_sp}, läpimitta (cm): {self.tree_diameter},\

@@ -75,7 +75,8 @@ class PlotRepository():
                 tree_sp = parts[0]
                 tree_diameter = float(parts[1])
                 tree_height = float(parts[2])
-                trees.append(Tree(tree_sp, tree_diameter, tree_height))
+                user = parts[3]
+                trees.append(Tree(tree_sp, tree_diameter, tree_height, user))
 
         return trees
 
@@ -83,7 +84,7 @@ class PlotRepository():
 
         with open(self._file_path, "w", encoding="utf-8") as file:
             for tree in trees:
-                row = f"{tree.tree_sp};{float(tree.tree_diameter)};{float(tree.tree_height)}"
+                row = f"{tree.tree_sp};{float(tree.tree_diameter)};{float(tree.tree_height)};{tree.user}"
 
                 file.write(row+"\n")
 
