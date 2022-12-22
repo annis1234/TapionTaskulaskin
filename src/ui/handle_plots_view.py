@@ -1,6 +1,6 @@
 import tkinter as Tk
 from tkinter import ttk, constants, StringVar
-from services.plot_service import PLOT_SERVICE
+from services.plot_service import PLOT_SERVICE, PlotExistsError
 from services.user_service import USER_SERVICE
 
 class PlotListView:
@@ -174,11 +174,17 @@ class HandlePlotsView:
         create_plot_button.grid(padx=5, pady=5)
 
     def _handle_add_plot(self):
+        
+        self._hide_error()
 
         try:
+            self._plot_service.ensure_plot_exists(f"{self._plot_entry.get()}.csv")
             self._plot_service.create_plot(self._plot_entry.get())
+        except PlotExistsError:
+            self._show_error(f"{self._plot_entry.get()} on jo olemassa!")
         except ValueError:
             self._show_error("Tarkista koealan nimi!")
+
         self._plot_entry.delete(0, constants.END)
         self._initialize_plot_list()
 
@@ -196,4 +202,4 @@ class HandlePlotsView:
         self._error_label.grid()
 
     def _hide_error(self):
-        self._error_label.grid_remove
+        self._error_label.grid_remove()

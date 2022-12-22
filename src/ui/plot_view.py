@@ -119,29 +119,29 @@ class PlotView():
             row=8, column=0, sticky=constants.W, padx=5, pady=5)
 
     def _handle_add_tree(self):
+        self._hide_error()
+
         tree_sp = self._sp_entry.get()
         tree_h = self._h_entry.get()
         tree_d = self._d_entry.get()
         user = self._user
-
         tree = Tree(tree_sp, tree_d, tree_h, user)
-
+        
         try:
             self._plot_service.validate_tree(tree)
             self._plot_service.create_tree(tree)
+            self._sp_entry.delete(0, constants.END)
+            self._h_entry.delete(0, constants.END)
+            self._d_entry.delete(0, constants.END)
         except ValueError:
             self._show_error("Tarkista syöttämäsi arvot!")
-
-        self._sp_entry.delete(0, constants.END)
-        self._h_entry.delete(0, constants.END)
-        self._d_entry.delete(0, constants.END)
 
     def _show_error(self, message):
         self._error_variable.set(message)
         self._error_label.grid()
 
     def _hide_error(self):
-        self._error_label.grid_remove
+        self._error_label.grid_remove()
 
     def _handle_clear_plot(self):
         self._plot_service.clear_plot()

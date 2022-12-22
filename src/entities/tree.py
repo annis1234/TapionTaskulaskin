@@ -24,9 +24,13 @@ class Tree():
         self.user = user
 
     def get_vol(self):
+        """Palauttaa yksittäiselle puulle lasketun tilavuusestimaatin
+        """
         return float(self.tree_height) * float(self.get_basal_area()) * 0.5
 
     def get_basal_area(self):
+        """Palauttaa yksittäisen puun pohjapinta-alan
+        """
         return pi*(float(self.tree_diameter)/100/2)**2
 
     def __str__(self):

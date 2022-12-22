@@ -3,6 +3,9 @@ from entities.tree import Tree
 from repositories.plot_repository import (
     PLOT_REPOSITORY as default_plot_repository)
 
+class PlotExistsError(Exception):
+    pass
+
 
 class PlotService():
     """Koealatiedostojen käsittelystä vastaava luokka
@@ -34,7 +37,7 @@ class PlotService():
             plot_filename: Valitun tiedoston nimi, luetaan käyttäjältä
         """
         self._plot_repository.select_plot(plot_filename)
-   
+
     def remove_plot(self, plot_filename):
         self._plot_repository.remove_plot(plot_filename)
 
@@ -54,7 +57,7 @@ class PlotService():
 
     def ensure_plot_exists(self, plot_filename):
         if self._plot_repository.ensure_plot_exists(plot_filename):
-            return True
+            raise PlotExistsError
         else:
             return False
 
@@ -67,6 +70,14 @@ class PlotService():
         self._plot_repository.create_tree(tree)
 
     def validate_tree(self, tree):
+        """Tarkastaa käyttäjän syöttämät puunutunnuset
+
+        Args:
+            Tree-olio, luetaan käyttäjältä
+        
+        Returns:
+            True, jos arvot ovat oikein
+        """
         if not tree.tree_sp.isalpha():
             raise ValueError
 
@@ -75,6 +86,8 @@ class PlotService():
 
         if not tree.tree_height.replace(".", "", 1).isdigit() or float(tree.tree_height) < 1.3:
             raise ValueError
+
+        return True
 
     def return_trees(self):
         """Hakee kaikki koealalle tallennetut puut

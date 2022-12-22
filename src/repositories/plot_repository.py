@@ -32,16 +32,24 @@ class PlotRepository():
         self._file_path = os.path.join(PLOT_FILE_PATH, self._plot_filename)
 
     def remove_plot(self, plot_name):
+        """Poistaa käyttäjän valitseman koealatiedoston hakemistosta
+        Args:
+            plot_name: Poistettavan koealan nimi
+        """
         self._plot_filename = plot_name
         self._file_path = os.path.join(PLOT_FILE_PATH, self._plot_filename)
         os.remove(self._file_path)
 
     def ensure_plot_exists(self, plot_name):
+        """Tarkistaa, onko koealatiedosto olemassa
+        Args:
+            plot_name: Koealatiedoston nimi, jonka olemassaolo tarkistetaan
+
+        Returns:
+            True, jos tiedosto on olemassa
+        """
         plots = os.listdir(PLOT_FILE_PATH)
-        if plot_name in plots:
-            return True
-        else:
-            return False
+        return plot_name in plots
 
     def return_plots(self):
         """Palauttaa kaikkien olemassa olevien koealojen nimet

@@ -41,13 +41,13 @@ class CalcService():
         """Laskee koealan puuston kokonaistilavuuden
 
         Returns:
-            Palauttaa koealan puuston kokonaistilavuuden
+            Palauttaa koealan puuston kokonaistilavuuden muunnettuna hehtaarikohtaiseksi
         """
         vol_sum = 0
         trees = self._plot_repository.find_all_trees()
         for tree in trees:
             vol_sum += tree.get_vol()
-        return round(vol_sum, 3) * 50 # jos koealan pinta-ala 200m2
+        return round(vol_sum, 3) * 50
 
     def main_tree_sp(self):
         """Laskee koelana puuston pääpuulajin
@@ -62,6 +62,11 @@ class CalcService():
         return max(species, key=species.count)
 
     def return_h(self):
+        """Tallentaa koealan puiden pituudet listaksi
+
+        Returns:
+            Palauttaa listan puiden pituuksista
+        """
         tree_heights = []
         trees = self._plot_repository.find_all_trees()
         for tree in trees:
@@ -70,6 +75,11 @@ class CalcService():
         return tree_heights
 
     def return_d(self):
+        """Tallentaa koealan puiden läpimitat listaksi
+
+        Returns:
+            Palauttaa listan puiden läpimitoista
+        """
         tree_diameters = []
         trees =self._plot_repository.find_all_trees()
         for tree in trees:

@@ -20,6 +20,14 @@ class TestPlot(unittest.TestCase):
         self.assertEqual(len(trees), 1)
         self.assertEqual(trees[0].tree_sp, "Mänty")
 
+    def test_create_tree_with_invalid_values(self):
+        self.assertRaises(ValueError, lambda: self._plot_service.validate_tree(Tree("222", 25, 27, self._user)))
+        self.assertRaises(ValueError, lambda: self._plot_service.validate_tree(Tree("Mänty", "ff", 27, self._user)))
+        self.assertRaises(ValueError, lambda: self._plot_service.validate_tree(Tree("Mänty", "25", "kk", self._user)))
+
+    def test_create_plot_with_invalid_name(self):
+        self.assertRaises(ValueError, lambda: self._plot_service.create_plot(""))
+
     def test_mean_height(self):
         tree1 = Tree("Mänty", 28, 20, self._user)
         tree2 = Tree("Mänty", 28, 30, self._user)
@@ -52,6 +60,7 @@ class TestPlot(unittest.TestCase):
 
     def test_handle_two_plots(self):
         self._plot_service.create_plot("test_plot2")
+
         self._plot_service.select_plot("test_plot2.csv")
         tree1 = Tree("Mänty", 20, 20, self._user)
         self._plot_service.create_tree(tree1)
@@ -76,11 +85,37 @@ class TestPlot(unittest.TestCase):
 class TestUser(unittest.TestCase):
 
     def setUp(self):
-        self.user_service = USER_SERVICE
+        self._user_service = USER_SERVICE
 
     def test_create_user(self):
-        self.user_service.create_user("Käyttäjä1", "EkaTesti12-")
-        users = self.user_service.get_users()
+        self._user_service.create_user("Käyttäjä1", "EkaTesti12-")
+        users = self._user_service.get_users()
 
         self.assertEqual(len(users), 1)
         self.assertEqual(users[0].username, "Käyttäjä1")
+    
+    def test_login(self):
+        user = self._user_service.login("Käyttäjä1", "EkaTesti12-")
+        self.assertEqual(user.username, "Käyttäjä1")
+
+    def test_get_current_user(self):
+        user = self._user_service.get_current_user()
+        self.assertEqual(user.username, "Käyttäjä1")
+
+    def test_logout(self):
+        self._user_service.logout()
+        self.assertEqual(self._user_service.get_current_user(), None)
+
+    def test_invalid_login(self):
+        self.assertRaises(InvalidCredentialsError, lambda: self._user_service.login("Käyttäjä1", "VaaraSalasana1-"))
+
+    def test_username_exists(self):
+        self.assertRaises(UsernameExistsError, lambda: self._user_service.create_user("Käyttäjä1", "TokaTesti12-"))
+
+    def test_validate_password(self):
+        self.assertEqual(self._user_service.validate_password("Sal1-"), False)
+        self.assertEqual(self._user_service.validate_password("Salasana-"), False)
+        self.assertEqual(self._user_service.validate_password("salasana1-"), False)
+        self.assertEqual(self._user_service.validate_password("SALASANA1-"), False)
+        self.assertEqual(self._user_service.validate_password("Salasana1"), False)
+        self.assertEqual(self._user_service.validate_password("Salasana1-"), True)

@@ -21,6 +21,7 @@ class UserService():
             user_repository: Olio, joka hoitaa UserRepository-luokan tehtävät
         """
         self._user_repository = user_repository
+        self._user = None
 
     def create_user(self, username, password, login=True):
         """Luo uuden käyttäjän
@@ -89,6 +90,7 @@ class UserService():
         Returns:
             False, jos jokin ehdoista ei täyty
         """
+
         if len(password) < 6:
             return False
         if not any(char.isdigit() for char in password):
