@@ -1,6 +1,6 @@
 import tkinter as Tk
 from tkinter import ttk, constants, StringVar
-from services.plot_service import PLOT_SERVICE, UsernameExistsError
+from services.user_service import USER_SERVICE, UsernameExistsError
 
 
 class CreateUserView:
@@ -20,7 +20,7 @@ class CreateUserView:
         self._handle_create_user = handle_create_user
         self._handle_show_login_view = handle_show_login_view
         self._frame = None
-        self._plot_service = PLOT_SERVICE
+        self._user_service = USER_SERVICE
         self._username_entry = None
         self._password_entry = None
         self._error_variable = None
@@ -46,7 +46,7 @@ class CreateUserView:
         password = self._password_entry.get()
 
 
-        if self._plot_service.validate_password(password) == False:
+        if self._user_service.validate_password(password) == False:
             self._show_error(f"Salasanan on oltava vähintään\n 6 merkkiä pitkä, ja sen tulee sisältää:\n\
             - Yksi pieni kirjain\n\
             - Yksi iso kirjain\n\
@@ -55,7 +55,7 @@ class CreateUserView:
             return
 
         try:
-            self._plot_service.create_user(username, password)
+            self._user_service.create_user(username, password)
             self._handle_create_user()
         except UsernameExistsError:
             self._show_error(f"Käyttäjätunnus {username} on jo käytössä!")

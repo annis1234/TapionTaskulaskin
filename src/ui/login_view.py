@@ -1,6 +1,6 @@
 import tkinter as Tk
 from tkinter import ttk, StringVar, constants
-from services.plot_service import PLOT_SERVICE, InvalidCredentialsError
+from services.user_service import USER_SERVICE, InvalidCredentialsError
 
 class LoginView:
 
@@ -31,7 +31,7 @@ class LoginView:
         password = self._password_entry.get()
 
         try:
-            PLOT_SERVICE.login(username, password)
+            USER_SERVICE.login(username, password)
             self._handle_login()
         except InvalidCredentialsError:
             self._show_error("Väärä käyttäjätunnus tai salasana! :( Yritä uuudestaan!")

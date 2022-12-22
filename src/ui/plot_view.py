@@ -1,7 +1,8 @@
 
 import tkinter as Tk
 from tkinter import ttk, constants, StringVar
-from services.plot_service import PLOT_SERVICE, ValueError
+from services.plot_service import PLOT_SERVICE
+from services.user_service import USER_SERVICE
 from entities.tree import Tree
 
 
@@ -14,7 +15,7 @@ class PlotView():
         self._sp_entry = None
         self._d_entry = None
         self._h_entry = None
-        self._user = PLOT_SERVICE.get_current_user()
+        self._user = USER_SERVICE.get_current_user()
         self._handle_show_stand_data_view = handle_show_stand_data_view
         self._show_handle_plots_view = show_handle_plots_view
         self._stand_data_frame = None
@@ -88,7 +89,7 @@ class PlotView():
 
         label = ttk.Label(master=self._frame, text="Syötä puun tiedot:", font=self._font, foreground=self._fg)
         label_sp = ttk.Label(master=self._frame, text="Puulaji:", font=self._font, foreground=self._fg)
-        label_d = ttk.Label(master=self._frame, text="Läpimitta (cm):", font=self._font, foreground=self._fg)
+        label_d = ttk.Label(master=self._frame, text="Rinnankorkeusläpimitta (cm):", font=self._font, foreground=self._fg)
         label_h = ttk.Label(master=self._frame, text="Pituus (m):", font=self._font, foreground=self._fg)
 
         self._sp_entry = ttk.Entry(master=self._frame)

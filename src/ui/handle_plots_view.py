@@ -1,6 +1,7 @@
 import tkinter as Tk
 from tkinter import ttk, constants, StringVar
-from services.plot_service import PLOT_SERVICE, ValueError
+from services.plot_service import PLOT_SERVICE
+from services.user_service import USER_SERVICE
 
 class PlotListView:
     """Koealalistauksesta vastaava näkymä
@@ -83,7 +84,7 @@ class HandlePlotsView:
         self._frame = None
         self._plot_service = PLOT_SERVICE
         self._handle_logout = handle_logout
-        self._user = PLOT_SERVICE.get_current_user()
+        self._user = USER_SERVICE.get_current_user()
 
         self._plot_list_frame = None
         self._plot_list_view = None

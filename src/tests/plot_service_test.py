@@ -1,5 +1,6 @@
 import unittest
-from services.plot_service import PLOT_SERVICE, InvalidCredentialsError, UsernameExistsError
+from services.plot_service import PLOT_SERVICE
+from services.user_service import USER_SERVICE, InvalidCredentialsError, UsernameExistsError
 from entities.tree import Tree
 from entities.user import User
 
@@ -9,7 +10,7 @@ class TestPlot(unittest.TestCase):
         self._plot_service = PLOT_SERVICE
         self._plot_service.create_plot("test_plot")
         self._plot_service.clear_plot()
-        self.user = PLOT_SERVICE.get_current_user()
+        self.user = "TestUser"
 
     def test_create_tree(self):
         tree1 = Tree("Mänty", 28, 30, self.user)
@@ -69,11 +70,11 @@ class TestPlot(unittest.TestCase):
 class TestUser(unittest.TestCase):
 
     def setUp(self):
-        self.plot_service = PLOT_SERVICE
+        self.user_service = USER_SERVICE
 
     def test_create_user(self):
-        self.plot_service.create_user("Käyttäjä1", "EkaTesti12-")
-        users = self.plot_service.get_users()
+        self.user_service.create_user("Käyttäjä1", "EkaTesti12-")
+        users = self.user_service.get_users()
 
         self.assertEqual(len(users), 1)
         self.assertEqual(users[0].username, "Käyttäjä1")
