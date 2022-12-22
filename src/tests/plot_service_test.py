@@ -1,13 +1,14 @@
 import unittest
 from services.plot_service import PLOT_SERVICE
 from services.user_service import USER_SERVICE, InvalidCredentialsError, UsernameExistsError
+from services.calc_service import CALC_SERVICE
 from entities.tree import Tree
-from entities.user import User
 
 class TestPlot(unittest.TestCase):
 
     def setUp(self):
         self._plot_service = PLOT_SERVICE
+        self._calc_service = CALC_SERVICE
         self._plot_service.create_plot("test_plot")
         self._plot_service.clear_plot()
         self.user = "TestUser"
@@ -24,21 +25,21 @@ class TestPlot(unittest.TestCase):
         tree2 = Tree("Mänty", 28, 30, self.user)
         self._plot_service.create_tree(tree1)
         self._plot_service.create_tree(tree2)
-        self.assertEqual(self._plot_service.mean_height(), 25)
+        self.assertEqual(self._calc_service.mean_height(), 25)
 
     def test_mean_d(self):
         tree1 = Tree("Mänty", 20, 25, self.user)
         tree2 = Tree("Mänty", 30, 25, self.user)
         self._plot_service.create_tree(tree1)
         self._plot_service.create_tree(tree2)
-        self.assertEqual(self._plot_service.mean_diameter(), 25)
+        self.assertEqual(self._calc_service.mean_diameter(), 25)
 
     def test_v_sum(self):
         tree1 = Tree("Mänty", 20, 20, self.user)
         tree2 = Tree("Mänty", 20, 20, self.user)
         self._plot_service.create_tree(tree1)
         self._plot_service.create_tree(tree2)
-        self.assertEqual(self._plot_service.sum_vol(), 0.628*50)
+        self.assertEqual(self._calc_service.sum_vol(), 0.628*50)
 
     def test_main_tree_sp(self):
         tree1 = Tree("Mänty", 20, 20, self.user)
@@ -47,7 +48,7 @@ class TestPlot(unittest.TestCase):
         self._plot_service.create_tree(tree1)
         self._plot_service.create_tree(tree2)
         self._plot_service.create_tree(tree3)
-        self.assertEqual(self._plot_service.main_tree_sp(), "Mänty")
+        self.assertEqual(self._calc_service.main_tree_sp(), "Mänty")
 
     def test_handle_two_plots(self):
         self._plot_service.create_plot("test_plot2")

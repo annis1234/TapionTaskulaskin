@@ -3,6 +3,7 @@ from tkinter import ttk, constants
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
 from services.plot_service import PLOT_SERVICE
+from services.calc_service import CALC_SERVICE
 
 class StandDataView():
 
@@ -10,6 +11,7 @@ class StandDataView():
         self._root = root
         self._frame = None
         self._plot_service = PLOT_SERVICE
+        self._calc_service = CALC_SERVICE
         self._handle_show_plot_view = handle_show_plot_view
         self._charts_frame = None
         self._charts_view = None
@@ -43,10 +45,10 @@ class StandDataView():
             sticky=constants.E)
 
         if self._plot_service.return_trees():
-            main_tree_sp = ttk.Label(master=self._frame, text= f"Pääpuulaji: {self._plot_service.main_tree_sp()}", font=self._font, foreground=self._fg)
-            mean_d = ttk.Label(master=self._frame, text=f"Keskiläpimitta (cm): {self._plot_service.mean_diameter():0.2f}", font=self._font, foreground=self._fg)
-            mean_h = ttk.Label(master=self._frame, text=f"Keskipituus (m): {self._plot_service.mean_height():0.2f}", font=self._font, foreground=self._fg)
-            sum_v = ttk.Label(master=self._frame, text=f"Tilavuus (m3/ha): {self._plot_service.sum_vol():0.3f}", font=self._font, foreground=self._fg)
+            main_tree_sp = ttk.Label(master=self._frame, text= f"Pääpuulaji: {self._calc_service.main_tree_sp()}", font=self._font, foreground=self._fg)
+            mean_d = ttk.Label(master=self._frame, text=f"Keskiläpimitta (cm): {self._calc_service.mean_diameter():0.2f}", font=self._font, foreground=self._fg)
+            mean_h = ttk.Label(master=self._frame, text=f"Keskipituus (m): {self._calc_service.mean_height():0.2f}", font=self._font, foreground=self._fg)
+            sum_v = ttk.Label(master=self._frame, text=f"Tilavuus (m3/ha): {self._calc_service.sum_vol():0.3f}", font=self._font, foreground=self._fg)
 
             main_tree_sp.grid(row=12, column=1, sticky=constants.E, padx=5, pady=5)
             mean_d.grid(row=13, column=1, sticky=constants.E, padx=5, pady=5)
@@ -66,7 +68,7 @@ class Charts():
     def __init__(self, root):
         self._root = root
         self._frame = None
-        self._plot_service = PLOT_SERVICE
+        self._calc_service = CALC_SERVICE
 
         self._initialize_plot()
 
@@ -80,8 +82,8 @@ class Charts():
         self._frame = ttk.Frame(master=self._root)
         fig = Figure(figsize = (5, 4), dpi=100)
 
-        y = self._plot_service.return_h()
-        x = self._plot_service.return_d()
+        y = self._calc_service.return_h()
+        x = self._calc_service.return_d()
         plot1 = fig.add_subplot(111)
         plot1.scatter(x,y)
         plot1.set_xlabel("Läpimitta (cm)")
