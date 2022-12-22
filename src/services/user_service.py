@@ -11,14 +11,13 @@ class UsernameExistsError(Exception):
     pass
 
 class UserService():
-    """Sovelluslogiikasta vastaava luokka
+    """Käyttäjätunnusten käsittelystä vastaava luokka
     """
 
     def __init__(self, user_repository=default_user_repository):
         """Luokan konstruktori
 
         Args:
-            plot_repository: Olio, joka hoitaa PlotRepository-luokan tehtävät
             user_repository: Olio, joka hoitaa UserRepository-luokan tehtävät
         """
         self._user_repository = user_repository

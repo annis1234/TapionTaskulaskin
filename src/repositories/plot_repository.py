@@ -26,7 +26,7 @@ class PlotRepository():
     def select_plot(self, plot_name):
         """Asettaa käyttäjän valitseman koealatiedoston nimen polkuun
         Args:
-            plot_name: Valitun koealan nimi, luetaan käyttäjältä
+            plot_name: Valitun koealan nimi
         """
         self._plot_filename = plot_name
         self._file_path = os.path.join(PLOT_FILE_PATH, self._plot_filename)
@@ -35,6 +35,13 @@ class PlotRepository():
         self._plot_filename = plot_name
         self._file_path = os.path.join(PLOT_FILE_PATH, self._plot_filename)
         os.remove(self._file_path)
+
+    def ensure_plot_exists(self, plot_name):
+        plots = os.listdir(PLOT_FILE_PATH)
+        if plot_name in plots:
+            return True
+        else:
+            return False
 
     def return_plots(self):
         """Palauttaa kaikkien olemassa olevien koealojen nimet
@@ -63,15 +70,8 @@ class PlotRepository():
         self._write(trees)
         return tree
 
- #   def ensure_file_exists(self, plot_filename):
- #       """Varmistaa ennen tiedoston käsittelyä, että tiedosto on olemassa
- #       """
- #       return os.path.exists(self._file_path)
-
     def _read(self):
         trees = []
-
-#        self._ensure_file_exists():
 
         with open(self._file_path, encoding="utf-8") as file:
             for row in file:

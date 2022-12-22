@@ -1,9 +1,8 @@
 from repositories.plot_repository import (
     PLOT_REPOSITORY as default_plot_repository)
 
-
 class CalcService():
-    """Sovelluslogiikasta vastaava luokka
+    """Koealatunnusten laskemisesta vastaava luokka
     """
 
     def __init__(self, plot_repository=default_plot_repository):
@@ -11,10 +10,8 @@ class CalcService():
 
         Args:
             plot_repository: Olio, joka hoitaa PlotRepository-luokan tehtävät
-            user_repository: Olio, joka hoitaa UserRepository-luokan tehtävät
         """
         self._plot_repository = plot_repository
-        self._user = None
 
     def mean_height(self):
         """Laskee koealan puuston keskipituuden

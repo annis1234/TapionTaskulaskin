@@ -5,7 +5,7 @@ from repositories.plot_repository import (
 
 
 class PlotService():
-    """Sovelluslogiikasta vastaava luokka
+    """Koealatiedostojen käsittelystä vastaava luokka
     """
 
     def __init__(self, plot_repository=default_plot_repository):
@@ -51,6 +51,12 @@ class PlotService():
 
         """
         return self._plot_repository.return_plots()
+
+    def ensure_plot_exists(self, plot_filename):
+        if self._plot_repository.ensure_plot_exists(plot_filename):
+            return True
+        else:
+            return False
 
     def create_tree(self, tree: Tree):
         """Luo puun ja lisää sen koealalle
