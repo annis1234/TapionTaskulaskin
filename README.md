@@ -4,7 +4,7 @@ Tapion taskulaskin on aputyökalu metsänmittaamiseen. Sovelluksen käyttäjä v
 lisätä valitsemalleen koealalle puita. Puun yhteydessä tallennetaan puulaji sekä puun
 läpimitta ja pituus. Sovellus laskee ja palauttaa käyttäjä valitseman 
 koealan puista lasketut koealakohtaiset keskitunnukset: pääpuulajin,
- keskiläpimitan, keskipituuden ja hehtaarikohtaisen tilavuusestimaatin. Koealatunnusten yhteydessä piirretään kuvaaja, jossa näkyy koealan puiden pituus-läpimittarelaatiot.
+ keskiläpimitan, keskipituuden ja hehtaarikohtaisen tilavuusestimaatin. Lisäksi sovellus piirtää kuvaajan koealan puiden pituus-läpimitta-relaatioista.
  
  Koeala nimetään ilman .csv-päätettä. Puutunnukset kirjataan kokonaislukuna tai desimaalilukuna, jolloin desimaalierottimena toimii piste.
 Sovellus olettaa, että mitatut koealat ovat standardikokoisia 50 x 50 m aloja.
