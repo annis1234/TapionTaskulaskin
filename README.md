@@ -1,14 +1,15 @@
 # Tapion Taskulaskin
 
-Tapion taskulaskin on aputyökalu metsänmittaamiseen. Sovelluksen 
-tämänhetkisessä versiossa käyttäjä voi sisäänkirjautumisen jälkeen luoda koealoja csv-tiedostona ja 
+Tapion taskulaskin on aputyökalu metsänmittaamiseen. Sovelluksen käyttäjä voi sisäänkirjautumisen jälkeen luoda koealoja csv-tiedostona ja 
 lisätä valitsemalleen koealalle puita. Puun yhteydessä tallennetaan puulaji sekä puun
-läpimitta ja pituus. Sovellus laskee ja palauttaa valitun 
+läpimitta ja pituus. Sovellus laskee ja palauttaa käyttäjä valitseman 
 koealan puista lasketut koealakohtaiset keskitunnukset: pääpuulajin,
- keskiläpimitan, keskipituuden ja hehtaarikohtaisen tilavuuden. Tällä hetkellä oletuksena on, että jokainen koeala on yhden 
- hehtaarin kokoinen.
+ keskiläpimitan, keskipituuden ja hehtaarikohtaisen tilavuusestimaatin. Koealatunnusten yhteydessä piirretään kuvaaja, jossa näkyy koealan puiden pituus-läpimittarelaatiot.
+ 
+ Koeala nimetään ilman .csv-päätettä. Puutunnukset kirjataan kokonaislukuna tai desimaalilukuna, jolloin desimaalierottimena toimii piste.
+Sovellus olettaa, että mitatut koealat ovat standardikokoisia 50 x 50 m aloja.
 
-Koeala nimetään ja valitaan kirjoittamalla sen nimi ilman .csv-päätettä.
+Koealatiedostot eivät ole käyttäjäkohtaisia, mikä mahdollistaa sen, että kaikki käyttäjät, joilla on pääsy hakemistoon, voivat kirjata puita samaan tiedostoon. Puun tallentamisen yhteydessä kirjataan myös sen tallentanut käyttäjä.
 
 ## Dokumentaatio
 
