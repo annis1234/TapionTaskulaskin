@@ -7,8 +7,7 @@
 | 17.11. |  2 | Testaamisen aloitus
 | 21.11. |  1 | Viikon palautuksen viimeistelyä, testaaminen Cubblilla
 | 22.11. |  2 | Lisää Tkinter-harjoittelua ja graafisen käyttöliittymän luonnostelua testisovelluksessa
-| 23.11. |  4 | Graafisen käyttöliittymän kirjoittaminen varsinaiseen sovellukseen, koodin refaktorointia, keskitunnusfunktioiden 
-lisääminen
+| 23.11. |  4 | Graafisen käyttöliittymän kirjoittaminen varsinaiseen sovellukseen, koodin refaktorointia, keskitunnusfunktioiden lisääminen
 | 28.11. |  5 | Testien kirjoittaminen, Pylintin käyttöönotto, koodin siistimistä, testaaminen Cubblilla
 | 29.11. |  2 | Lisää siistimistä ja testaamista Cubblilla, luokkakaavion kirjoitus ym. dokumentaation päivitys
 | 30.11. |  4 | Koealatunnukset tulostavan näkymä käyttöliittymään ja useamman koealan hallinnan hahmottelua
