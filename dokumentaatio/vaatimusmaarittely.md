@@ -9,7 +9,7 @@ ja palauttaa koealakohtaisia keskitunnuksia.
 Perusversiossa tallennettavat puutunnukset ovat puulaji, pituus ja 
 rinnankorkeusläpimitta, ja palautettavat keskitunnukset ovat pääpuulaji, keskiläpimitta(cm), keskipituus 
 (m) ja keskitilavuus (m3/ha). Perusversiossa oletuksena on, että 
-mitatut koealat ovat standardikokoisia 50 x 50 m aloja.
+mitatut koealat ovat standardikokoisia 200 m2 ympyräkoealoja.
 
 Käyttäjä kirjautuu sovellukseen käyttäjätunnuksella. Käyttäjätunnus tallennetaan puun lisäämisen yhteydessä. Koealatiedostot eivät ole käyttäjäkohtaisia, vaan tiedostoja voivat muokata kaikki käyttäjät, joilla on pääsy samaan hakemistoon.
 
