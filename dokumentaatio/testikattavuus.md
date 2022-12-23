@@ -10,4 +10,6 @@ Testauksen haaraumakattavuus on 95 %. Käyttöliittymä on jätetty testauksen u
 
 ![testikattavuus](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kuvat/testikattavuus.png)
 
+Testeissä on käyty läpi kaikki ohjelman keskeisimmät toiminnallisuudet. Syötekenttiä sekä käyttäjätunnuksen luomista ja sisäänkirjautumista on testattu virheellisillä syötteillä
+
 Testatut skenaariot ovat tilanteita, joihin voi päätyä, kun sovellusta käytetään graafisen käyttöliittymän kautta. Testaamatta ovat siis jääneet esimerkiksi tilanteet, joissa käyttäjä yrittää käsitellä tiedostoa, jota ei ole olemassa.
