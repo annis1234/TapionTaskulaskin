@@ -6,7 +6,7 @@ Ohjelma sisältää hakemistot ui, repositories, services ja entities. Hakemisto
 
 Sovelluksen rakenne luokkakaaviona:
 
-![Luokkakaavio](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/luokkakaavio.png)
+![Luokkakaavio](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kuvat/sovelluslogiikka.png)
 
 ## Käyttöliittymä
 
