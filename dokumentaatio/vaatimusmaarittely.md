@@ -28,9 +28,7 @@ käyttäjä.
 
 ### Ennen kirjautumista
 
-
-- Sovelluksella on graafinen käyttöliittymä (TEHTY)
-- Käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan (TEHTY)
+- Käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan
   - Salasanan on oltava vähintään 6 merkkiä pitkä ja sen tulee sisältää:
     - iso kirjain
     - pieni kirjain
