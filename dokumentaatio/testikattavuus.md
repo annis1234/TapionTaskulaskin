@@ -4,7 +4,7 @@ Sovellusta on testattu manuaalisesti järjestelmätasolla sekä unittest-moduuli
 
 Sovelluslogiikasta vastaavia PlotService- ja CalcService-luokkia on testattu services_test-tiedoston TestPlot-luokassa. UserService on testattu näistä erillään TestUser-luokassa. Service-oliot käyttävät testeissä samoja repository-olioita kuin varsinainen ohjelmakin. Testikäyttäjien tiedot tallennetaan erilliseen testitietokantaan, joka on konfiguroitu .env.test-tiedostossa.
 
-UserRepository- ja PlotRepository-luokat ovat testattu TestUserRepository- ja TestPlotRepository-luokissa. Testejä varten 
+UserRepository- ja PlotRepository-luokat ovat testattu TestUserRepository- ja TestPlotRepository-luokissa. TestUserRepository-luokka käyttää testitietokantaa, ja TestPlotRepository-luokka luo testejä varten erilliset testikoealatiedostot.
 
 ### Testauskattavuus
 
