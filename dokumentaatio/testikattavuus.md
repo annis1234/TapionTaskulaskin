@@ -14,4 +14,4 @@ Testauksen haaraumakattavuus on 95 %. Käyttöliittymä on jätetty testauksen u
 
 Testeissä on käyty läpi kaikki ohjelman keskeisimmät toiminnallisuudet. On myös testattu, että virheelliset syötteet tai kirjautumistiedot tuottavat halutut virheviestit.
 
-Testatut skenaariot ovat tilanteita, joihin voi päätyä, kun sovellusta käytetään graafisen käyttöliittymän kautta. Testaamatta ovat siis jääneet esimerkiksi tilanteet, joissa käyttäjä yrittää käsitellä tiedostoa, jota ei ole olemassa.
+Testatut skenaariot ovat tilanteita, joihin voi päätyä, kun sovellusta käytetään graafisen käyttöliittymän kautta. Testaamatta ovat siis jääneet esimerkiksi tilanteet, joissa käyttäjä yrittää käsitellä tiedostoa, jota ei ole olemassa. Testauksessa on myös oletettu, että käyttäjä on lukenut sovelluksen asennusohjeet ja asentanut ohjelman niiden mukaisesti.
