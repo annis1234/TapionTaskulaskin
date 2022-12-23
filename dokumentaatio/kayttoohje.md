@@ -32,7 +32,7 @@ Sovellus käynnistyy sisäänkirjautumisnäkymään (kuvassa vasemmalla). Jos k�
 
 ## Koealatiedostojen käsittely
 
-Kirjautumisen jälkeen aukeaa näkymä, jossa käyttäjä voi luoda uuden koealatiedoston tai avata jo olemassa olevan tiedoston. Näkymässä on listaus mahdollisesti jo olemassaolevista tiedostoista. Tiedosto avataan kirjoittamalla halutun tiedoston nimi ilman csv-päätettä "Avaa koeala"- syötekenttään ja klikkaamalla "Avaa koeala". Uloskirjautuminen tapahtuu klikkaamalla "Kirjaudu ulos".
+Kirjautumisen jälkeen aukeaa näkymä, jossa käyttäjä voi luoda uuden koealatiedoston tai avata jo olemassa olevan tiedoston. Näkymässä on listaus mahdollisesti jo olemassaolevista tiedostoista.  Koealatiedosto luodaan kirjoittamalla sen nimi syötekenttään ilman .csv-päätettä, ja klikkaamalla "Luo koeala". Tiedosto avataan klikkaamalla halutun koealan kohdalla olevaa "Avaa koeala"-painiketta. Käyttäjä voi myös poistaa koealatiedoston valitsemalla "Poista koeala". Tällöin on syytä huomoida, että tiedosto katoaa lopullisesti, eikä sitä voi sovelluksen kautta enää palauttaa. Uloskirjautuminen tapahtuu klikkaamalla "Kirjaudu ulos".
 
 ![handle_plots_view](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kuvat/handle_plots_view.png)
 
