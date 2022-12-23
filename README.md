@@ -14,13 +14,9 @@ Koealatiedostot eivät ole käyttäjäkohtaisia, mikä mahdollistaa sen, että k
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
-
 [Työaikakirjanpito](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
-
 [Changelog](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
-
 [Arkkitehtuurikuvaus](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
-
 [Käyttöohje](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kayttoohje.md)
 
 ## Asennus
