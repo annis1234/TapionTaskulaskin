@@ -3,17 +3,15 @@
 ## Sovelluksen tarkoitus
 
 Sovelluksen tarkoituksena on toimia metsänmittauksen apuvälineenä. 
-Sovellukseen tallennetaan koeala, johon lisätään koealalta mitatut 
-puut ja niitä kuvaavat tunnukset. Puutunnusten perusteella sovellus laskee 
+Sovelluksen avulla luodaan koealatiedosto, johon tallennetaan koealan puista mitatut tunnukset. Puutunnusten perusteella sovellus laskee 
 ja palauttaa koealakohtaisia keskitunnuksia.
 
-Alkuvaiheessa tallennettavat puutunnukset ovat puulaji, pituus ja 
-rinnankorkeusläpimitta, ja palautettavat keskitunnukset ovat pääpuulaji, keskipituus 
+Perusversiossa tallennettavat puutunnukset ovat puulaji, pituus ja 
+rinnankorkeusläpimitta, ja palautettavat keskitunnukset ovat pääpuulaji, keskiläpimitta(cm), keskipituus 
 (m) ja keskitilavuus (m3/ha). Perusversiossa oletuksena on, että 
-mitattavat koealat ovat yhden hehtaarin kokoisia.
+mitatut koealat ovat standardikokoisia 50 x 50 m aloja.
 
-Metsänmittaaja kirjautuu sovellukseen tunnuksella, ja mitatut koealat 
-tallennetaan tunnuksen yhteyteen.
+Käyttäjä kirjautuu sovellukseen käyttäjätunnuksella. Käyttäjätunnus tallennetaan puun lisäämisen yhteydessä. Koealatiedostot eivät ole käyttäjäkohtaisia, vaan tiedostoja voivat muokata kaikki käyttäjät, joilla on pääsy samaan hakemistoon.
 
 ## Käyttäjät
 
