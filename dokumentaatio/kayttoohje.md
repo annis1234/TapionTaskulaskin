@@ -38,4 +38,6 @@ Kirjautumisen jälkeen aukeaa näkymä, jossa käyttäjä voi luoda uuden koeala
 
 ## Puun lisääminen koealalle ja koealan tietojen katselu
 
-Koealatiedoston valittuaan käyttäjä voi lisätä puita koealalle. Puun tiedot (puulaji, läpimitta ja pituus) syötetään syötekenttiin, ja klikataan "Lisää puu". Käyttäjä voi tyhjentää koealan klikkaamalla "Tyhjennä koeala". Koealan puustotiedot avautuvat klikkaamalla "Näytä koealan tiedot". Käyttäjä voi siirtyä takaisin puun lisäämisnäkymään sekä puun lisäämisnäkymästä edelleen koealalistaukseen klikkaamalla "Takaisin".
+Koealatiedoston valittuaan käyttäjä voi lisätä puita koealalle (vasen näkymä). Puun tiedot (puulaji, läpimitta ja pituus) syötetään syötekenttiin, ja klikataan "Lisää puu". Käyttäjä voi tyhjentää koealan klikkaamalla "Tyhjennä koeala". Koealan puustotiedot avautuvat klikkaamalla "Näytä koealan tiedot" (oikea näkymä). Käyttäjä voi siirtyä takaisin puun lisäämisnäkymään sekä puun lisäämisnäkymästä edelleen koealalistaukseen klikkaamalla "Takaisin".
+
+![handle_stand_data](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kuvat/handle_stand_data.png)
