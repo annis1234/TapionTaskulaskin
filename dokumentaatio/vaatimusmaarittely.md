@@ -21,7 +21,7 @@ Sovelluksessa on vain yksi käyttäjärooli, normaali käyttäjä.
 
 ## Käyttöliittymäluonnos
 
-![Käyttöliittymäluonnos](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/kayttoliittyma_luonnos.jpeg)
+![Käyttöliittymä](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kuvat/kayttoliittyma.jpeg)
 
 ## Perusversion tarjoama toiminnallisuus
 
