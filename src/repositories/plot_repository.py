@@ -97,7 +97,7 @@ class PlotRepository():
 
         with open(self._file_path, "w", encoding="utf-8") as file:
             for tree in trees:
-                row = f"{tree.tree_sp};{float(tree.tree_diameter)};{float(tree.tree_height)};{tree.user}"
+                row = f"{tree.tree_sp.lower()};{float(tree.tree_diameter)};{float(tree.tree_height)};{tree.user}"
 
                 file.write(row+"\n")
 

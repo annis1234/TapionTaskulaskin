@@ -1,3 +1,4 @@
+
 from repositories.plot_repository import (
     PLOT_REPOSITORY as default_plot_repository)
 
