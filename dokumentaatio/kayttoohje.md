@@ -1,5 +1,9 @@
 # Käyttöohje
 
+## Konfigurointi
+
+Käyttäjätietojen tallennukseen käytettävä tietokanta konfiguroidaan käynnistyshakemiston .env-tiedostossa, jossa sitä on mahdollista muokata. Tietokanta tallennetaan data-hakemistoon. Koealatiedostot konfiguroidaan käyttöliittymän kautta, ja ne tallennetaan data/plots-hakemistoon.
+
 ## Ohjelman käyttöönotto
 
 1. Asenna riippuvuudet komennolla:
