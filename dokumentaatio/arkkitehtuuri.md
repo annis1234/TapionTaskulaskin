@@ -16,22 +16,24 @@ Käyttöliittymä sisältää viisi näkymää:
 - Uuden käyttäjän luominen
 - Olemassa olevien koealatiedostojen listaus ja uuden tiedoston luominen
 - Puiden lisääminen valittuu koealatiedostoon
-- Valitun koealan puustotietojen katselu
+- Valitun koealan puustotietojen tarkastelu
 
 Näkymät ovat eriytettyinä omiin luokkiinsa. Luokka UI vastaa näkymien  esittämisestä ja niiden vaihtamisesta. Käyttöliittymän luokat käyttävät 
 PlotService-luokan metodeja toiminnallisuuksien toteuttamiseen.
 
 ## Sovelluslogiikka
 
-Sovelluksen keskeiset luokat ovat User ja Tree, jotka vastaavat sovelluksen käyttäjän ja sovelluksen kautta luotujen puiden kuvaamisesta. Luokka PlotService toteuttaa sovelluksen toiminnallisuudet. Sovelluksen keskeisimmät toiminnallisuudet ovat:
+Sovelluslogiikkaa hoitava koodi on ylläolevan luokkakaavion mukaisesti eriytetty kolmeen service-luokkaan. Kaavioon on lisätty esimerkkejä kunkin service-luokan sisältämistä metodeista. UserService huolehtii käyttäjään liittyvistä toiminnallisuuksista, PlotService hoitaa koealatiedostoihin liittyvät toiminnallisuudet ja CalcService vastaa puustotunnuksiin liittyvästä laskennasta. 
+
+Sovelluksen keskeisimmät toiminnallisuudet ovat:
 
 - Käyttäjän luominen
 - Sisäänkirjautuminen olemassaolevalla tunnuksella ja salasanalla
 - Koealatiedoston luominen
-- Puun tallentaminen koealalle
+- Puun tallentaminen koealatiedostoon
 - Valitun koealan puustotietojen laskeminen 
 
-PlotService-luokka sisältää metodit jokaisen toiminnallisuuden toteuttamiseksi. Tiedostojen käsittelystä vastaavat PlotRepository- ja UserRepository-luokat
+Sovelluksen keskeiset tietokohteet ovat User ja Tree, jotka vastaavat sovelluksen käyttäjän ja sovelluksen kautta luotujen puiden kuvaamisesta. Tiedostojen käsittelystä vastaavat PlotRepository- ja UserRepository-luokat
 
 ## Tiedon pysyväistallennus
 
