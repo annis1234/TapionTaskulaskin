@@ -53,13 +53,12 @@ ja luomaan/valitsemaan toisen koealan
 
 - Kirjaamisen nopeuttamiseksi puulajien kirjaaminen numerokoodeilla (1=mänty, 2=kuusi, 3=rauduskoivu...) 
 - Tallennettavien puutunnusten lisääminen (esim. ikä, latvusrajan korkeus, 
-20 metrin läpimitta) 
-- Palautettavien puustotunnusten lisääminen (esim. pohjapinta-ala, 
-keski-ikä, runkoluku, puulajisuhteet)
-- Tilavuusestimaatin tarkentaminen käyttämällä puulajikohtaisia tilavuusyhtälöitä
+20 metrin läpimitta, kasvutunnukset) 
+- Laskettavien puustotunnusten lisääminen (esim. keski-ikä, runkoluku, puulajisuhteet)
+- Tilavuusestimaattien tarkentaminen käyttämällä puulajikohtaisia tilavuusyhtälöitä
 - Koealaa kuvaavien tunnusten lisääminen (esim. kasvupaikka, kivisyys, 
 kunttaisuus, metsätuhot)
-- Yksittäisten puiden hakeminen ja tarkastelu id-numerolla ja tunnusten 
+- Yksittäisten puiden hakeminen id-numerolla ja tunnusten 
 laskeminen yksittäisistä puista
 - Muiden kuin standardikokoisten koealojen tallentaminen, jolloin hehtaarikohtaisen
 keskitilavuuden muuntamiseksi määritetään koealakohtainen muuntokerroin
