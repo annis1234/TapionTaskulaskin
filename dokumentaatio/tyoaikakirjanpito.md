@@ -18,4 +18,7 @@ lisääminen
 | 9.12.  |  2 | Ohjelman ulkoasun muokkaamista
 | 12.12. |  5 | Ulkoasun muotoilua, koealalistauksen lisääminen käyttäjän näkyville, testien kirjoittaminen
 | 13.12. |  4 | Viikon palautuksen viimeistelyä, dokumentaation päivitystä
-| yht.   | 56 |
+| 21.12. |  5 | Kuvaajan lisääminen, parannettu virhetilanteisiin varautumista
+| 22.12. |  5 | Service-luokan refaktorointi, testien lisääminen
+| 23.12. |  6 | Viimeistelyä, siistimistä, dokumentoinnin päivitystä ja tarkennusta
+| yht.   | 72 |
