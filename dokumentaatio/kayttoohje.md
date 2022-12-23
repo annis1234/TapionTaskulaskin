@@ -2,7 +2,7 @@
 
 ## Ohjelman käyttöönotto
 
-Lataa sovelluksen viimeisimmän ![releasen](https://github.com/annis1234/TapionTaskulaskin/releases/tag/Loppupalautus) lähdekoodi ja pura se haluamaasi paikkaan. Siirry kansioon TapionTaskulaskin-Loppupalautus ja toimi seuraavasti:
+Lataa sovelluksen viimeisimmän [releasen](https://github.com/annis1234/TapionTaskulaskin/releases/tag/Loppupalautus) lähdekoodi ja pura se haluamaasi paikkaan. Siirry kansioon TapionTaskulaskin-Loppupalautus ja toimi seuraavasti:
 
 1. Asenna riippuvuudet komennolla:
 
