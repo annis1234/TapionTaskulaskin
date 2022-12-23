@@ -39,29 +39,30 @@ käyttäjä.
 
 ### Kirjautumisen jälkeen
 
-- Käyttäjä näkee listauksen tallennetuista koealoista (TEHTY)
-- Käyttäjä pystyy lisäämään uuden koealan (TEHTY)
-- Käyttäjä pystyy tallentamaan koealalle puita (TEHTY)
-- Käyttäjä pystyy tyhjentämään koealan (TEHTY)
-- Käyttäjä näkee tulosteen koealan puista lasketuista keskitunnuksista 
-(TEHTY)
+- Käyttäjä näkee listauksen tallennetuista koealoista
+- Käyttäjä pystyy lisäämään uuden koealan tai poistamaan olemassaolevan koealan
+- Käyttäjä pystyy tallentamaan koealalle puita
+- Käyttäjä pystyy tyhjentämään koealan
+- Käyttäjä näkee tulosteen koealan puista lasketuista keskitunnuksista
+- Käyttäjä näkee pistekaavion puuston pituus-läpimitta-relaatioista 
 - Käyttäjä pystyy siirtymään koealan tiedoista takaisin koealalistaukseen, 
-ja luomaan/valitsemaan toisen koealan (TEHTY)
-- Käyttäjä voi kirjautua ulos järjestelmästä (TEHTY)
+ja luomaan/valitsemaan toisen koealan
+- Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 
+- Kirjaamisen nopeuttamiseksi puulajien kirjaaminen numerokoodeilla (1=mänty, 2=kuusi, 3=rauduskoivu...) 
 - Tallennettavien puutunnusten lisääminen (esim. ikä, latvusrajan korkeus, 
 20 metrin läpimitta) 
 - Palautettavien puustotunnusten lisääminen (esim. pohjapinta-ala, 
 keski-ikä, runkoluku, puulajisuhteet)
+- Tilavuusestimaatin tarkentaminen käyttämällä puulajikohtaisia tilavuusyhtälöitä
 - Koealaa kuvaavien tunnusten lisääminen (esim. kasvupaikka, kivisyys, 
 kunttaisuus, metsätuhot)
 - Yksittäisten puiden hakeminen ja tarkastelu id-numerolla ja tunnusten 
 laskeminen yksittäisistä puista
-- Mahdollisuus hakea ja tarkastella toisten mittaamien kuvioiden tietoja
-- Muun kuin hehtaarin kokoisten koealojen tallentaminen, jolloin 
-keskitilavuus muunnetaan hehtaarikohtaiseksi
+- Muiden kuin standardikokoisten koealojen tallentaminen, jolloin hehtaarikohtaisen
+keskitilavuuden muuntamiseksi määritetään koealakohtainen muuntokerroin
 - Koordinaattien lisääminen koealoille/mitattuihin puihin
 - Tarkastelutason laajentaminen: koealat kuuluvat metsikkökuviolle, ja kuviot muodostavat metsän. Koealamittausten perusteella voidaan estimoida 
 metsikkötason tunnuksia.
