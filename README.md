@@ -11,6 +11,8 @@ Sovellus olettaa, että mitatut koealat ovat standardikokoisia 50 x 50 m aloja.
 
 Koealatiedostot eivät ole käyttäjäkohtaisia, mikä mahdollistaa sen, että kaikki käyttäjät, joilla on pääsy hakemistoon, voivat kirjata puita samaan tiedostoon. Puun tallentamisen yhteydessä kirjataan myös sen tallentanut käyttäjä.
 
+Sovellus on testattu toimivaksi Python-versiolla 3.8.
+
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/annis1234/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
