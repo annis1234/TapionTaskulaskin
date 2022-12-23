@@ -18,7 +18,7 @@ class TestPlot(unittest.TestCase):
         self._plot_service.create_tree(tree1)
         trees = self._plot_service.return_trees()
         self.assertEqual(len(trees), 1)
-        self.assertEqual(trees[0].tree_sp, "Mänty")
+        self.assertEqual(trees[0].tree_sp, "mänty")
 
     def test_create_tree_with_invalid_values(self):
         self.assertRaises(ValueError, lambda: self._plot_service.validate_tree(Tree("222", 25, 27, self._user)))
@@ -56,7 +56,7 @@ class TestPlot(unittest.TestCase):
         self._plot_service.create_tree(tree1)
         self._plot_service.create_tree(tree2)
         self._plot_service.create_tree(tree3)
-        self.assertEqual(self._calc_service.main_tree_sp(), "Mänty")
+        self.assertEqual(self._calc_service.main_tree_sp(), "mänty")
 
     def test_handle_two_plots(self):
         self._plot_service.create_plot("test_plot2")
