@@ -7,7 +7,7 @@ koealan puista lasketut koealakohtaiset keskitunnukset: pääpuulajin,
  keskiläpimitan, keskipituuden ja hehtaarikohtaisen tilavuusestimaatin. Lisäksi sovellus piirtää kuvaajan koealan puiden pituus-läpimitta-relaatioista.
  
  Koeala nimetään ilman .csv-päätettä. Puutunnukset kirjataan kokonaislukuna tai desimaalilukuna, jolloin desimaalierottimena toimii piste.
-Sovellus olettaa, että mitatut koealat ovat standardikokoisia 50 x 50 m aloja.
+Sovellus olettaa, että mitatut koealat ovat standardikokoisia ympyräkoealoja, joiden säde on 7.98 m. Tällöin yhden koealan pinta-ala on 200 m2.
 
 Koealatiedostot eivät ole käyttäjäkohtaisia, mikä mahdollistaa sen, että kaikki käyttäjät, joilla on pääsy hakemistoon, voivat kirjata puita samaan tiedostoon. Puun tallentamisen yhteydessä kirjataan myös sen tallentanut käyttäjä.
 
