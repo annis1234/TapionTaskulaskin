@@ -26,13 +26,15 @@ poetry run invoke start
 
 ## Kirjautuminen ja uuden käyttäjätunnuksen luominen
 
-Sovellus käynnistyy sisäänkirjautumisnäkymään. Jos käyttäjällä on jo olemassaoleva käyttäjätunnus, sovellukseen kirjaudutaan kirjoittamalla käyttäjätunnus ja salasana syötekenttiin ja painamalla "Kirjaudu sisään". Jos käyttäjällä ei ole käyttäjätunnusta, hän voi luoda sellaisen painamalla "Uusi käyttäjä". Uuden käyttäjän luomisnäkymässä käyttäjä kirjoittaa haluamansa tunnuksen ja salasanan, ja klikkaa "Luo uusi". Tunnuksen luomisen jälkeen sovellus kirjaa käyttäjän automaattisesti sisään.
+Sovellus käynnistyy sisäänkirjautumisnäkymään (kuvassa vasemmalla). Jos käyttäjällä on jo olemassaoleva käyttäjätunnus, sovellukseen kirjaudutaan kirjoittamalla käyttäjätunnus ja salasana syötekenttiin ja painamalla "Kirjaudu sisään". Jos käyttäjällä ei ole käyttäjätunnusta, hän voi luoda sellaisen painamalla "Uusi käyttäjä". Uuden käyttäjän luomisnäkymässä (kuvassa oikealla) käyttäjä kirjoittaa haluamansa tunnuksen ja salasanan, ja klikkaa "Luo uusi". Tunnuksen luomisen jälkeen sovellus kirjaa käyttäjän automaattisesti sisään.
 
 ![start](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kuvat/start.png)
 
 ## Koealatiedostojen käsittely
 
 Kirjautumisen jälkeen aukeaa näkymä, jossa käyttäjä voi luoda uuden koealatiedoston tai avata jo olemassa olevan tiedoston. Näkymässä on listaus mahdollisesti jo olemassaolevista tiedostoista. Tiedosto avataan kirjoittamalla halutun tiedoston nimi ilman csv-päätettä "Avaa koeala"- syötekenttään ja klikkaamalla "Avaa koeala". Uloskirjautuminen tapahtuu klikkaamalla "Kirjaudu ulos".
+
+![handle_plots_view](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kuvat/handle_plots_view.png)
 
 ## Puun lisääminen koealalle ja koealan tietojen katselu
 
