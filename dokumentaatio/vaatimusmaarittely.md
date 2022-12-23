@@ -17,8 +17,7 @@ tallennetaan tunnuksen yhteyteen.
 
 ## Käyttäjät
 
-Sovelluksessa on (ainakin alkuvaiheessa) vain yksi käyttäjärooli, normaali 
-käyttäjä.
+Sovelluksessa on vain yksi käyttäjärooli, normaali käyttäjä.
 
 ## Käyttöliittymäluonnos
 
