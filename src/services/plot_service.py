@@ -65,7 +65,7 @@ class PlotService():
 
     def ensure_plot_exists(self, plot_filename):
         """Tarkastaa, onko nimetty koealatiedosto olemassa
-        
+
         Args:
             plot_filename: Koealatiedoston nimi, luetaan käyttäjältä
 
@@ -78,8 +78,7 @@ class PlotService():
         """
         if self._plot_repository.ensure_plot_exists(plot_filename):
             raise PlotExistsError
-        else:
-            return False
+        return False
 
     def create_tree(self, tree: Tree):
         """Luo puun ja lisää sen koealalle
@@ -94,7 +93,7 @@ class PlotService():
 
         Args:
             Tree-olio, luetaan käyttäjältä
-        
+
         Returns:
             True, jos arvot ovat oikein
         """
