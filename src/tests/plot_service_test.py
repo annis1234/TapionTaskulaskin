@@ -28,6 +28,15 @@ class TestPlot(unittest.TestCase):
     def test_create_plot_with_invalid_name(self):
         self.assertRaises(ValueError, lambda: self._plot_service.create_plot(""))
 
+    def test_return_d_and_h(self):
+        tree1 = Tree("Mänty", 28, 20, self._user)
+        tree2 = Tree("Mänty", 28, 30, self._user)
+        self._plot_service.create_tree(tree1)
+        self._plot_service.create_tree(tree2)
+
+        self.assertEqual(len(self._calc_service.return_d()),2)
+        self.assertEqual(len(self._calc_service.return_h()),2)
+
     def test_mean_height(self):
         tree1 = Tree("Mänty", 28, 20, self._user)
         tree2 = Tree("Mänty", 28, 30, self._user)
