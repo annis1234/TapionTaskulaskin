@@ -45,15 +45,17 @@ Käyttäjän tallentamiseen käytetään SQLite-tietokantaa, joka alustetaan ini
 
 ## Päätoiminnallisuudet
 
-### Koealan luominen ja valitseminen
+Koska keskeisimmät toiminnallisuudet liittyvät koealojen luomiseen ja käsittelyyn, kirjautuminen ja käyttäjätietojen käsittely on jätetty tästä osiosta pois. Toimintalogiikka on kuitenkin samankaltainen: käyttäjä valitsee haluamansa toiminnon käyttöliittymän kautta. Käyttöliittymän tapahtumakäsittelijä kutsuu UserService-luokan metodeja, jotka kutsuvat tarvittaessa metodeja UserRepository-luokasta.
+
+### Koealantiedoston luominen ja valitseminen
 
 ![Sekvenssikaavio1](https://github.com/annis1234/TapionTaskulaskin/blob/main/dokumentaatio/kuvat/sekvenssikaavio_2.png)
 
 Koealan luomisnäkymässä kirjoitetaan koealan nimi ja klikataan "Luo koeala". Tapahtumankäsittelijä kutsuu luokan PlotService 
 metodia create_plot parametrinaan käyttäjän antama koealan nimi. PlotService puolestaan kutsuu PlotRepository-luokan metodia 
-create (parametrina edelleen koelana nimi), joka luo csv-tiedoston annetulla nimellä. Koealan valitseminen tapahtuu samalla 
+create_plot (parametrina edelleen koelana nimi), joka luo csv-tiedoston annetulla nimellä. Koealan valitseminen tapahtuu samalla 
 periaatteella, paitsi tiedoston luomisen sijasta PlotRepository-luokan metodi select_plot asettaa sille parametrina annetun 
-tiedoston nimen polkuun.
+tiedoston nimen polkuun. UI päivittää näkymäänsä lisätyn koealatiedoston nimen. Koealatiedostojen nimet haetaan listana PlotService-luokan kautta PlotRepository-luokasta.
 
 ### Puun lisääminen koealalle ja koealan keskitunnusten tarkastelu
 
@@ -62,6 +64,8 @@ tiedoston nimen polkuun.
 Puun lisääminen tapahtuu kirjoittamalla puutunnukset ja klikkaamalla "Lisää puu". Tapahtumakäsittelijä kutsuu luokkaa Tree, 
 jossa luodaan Tree-olio annetuilla parametreilla.
 
-Koealan tiedot haetaan klikkaamalla "Näytä koealan tiedot". Tapahtumakäsittelijä kutsuu PlotService-luokasta keskitunnukset 
-laskevia metodeja. Metodit kutsuvat PlotRepositorysta listan kyseisen  puista, ja laskevat listalta keskitunnukset, jotka 
-palautetaan käyttöliittymälle näytettäväksi.
+Koealan tietoja tarkastellaan klikkaamalla "Näytä koealan tiedot", jolloin näkymä vaihtuu koealan tiedot esittävään näkymään. Kuvaaja alustetaan Charts-luokassa, joka kutsuu CalcService-luokan return_h()- ja return_d()-metodeja. CalcService palauttaa pituudet ja läpimitat listoina, joiden avulla kuvaaja piirretään. Selkeyden vuoksi kuvaajassa on esitetty vain pituuksien hakeminen.
+
+Kuvaajan lisäksi näkymässä esitetään koealan puustotunnukset. Tapahtumakäsittelijä kutsuu CalcService-luokasta keskitunnukset 
+laskevia metodeja. Metodit kutsuvat PlotRepositorysta listan kyseisen koealatiedoston puista, ja laskevat listalta halutut keskitunnukset, jotka 
+palautetaan käyttöliittymälle näytettäväksi. Selkeyden vuoksi tapahtumien kulku on esitetty kuvaajassa vain pääpuulajin osalta, mutta muiden puutunnusten kohdalla logiikka on sama.
