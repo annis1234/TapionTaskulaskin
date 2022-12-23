@@ -8,7 +8,20 @@ from entities.tree import Tree
 
 class PlotView():
 
+    """Luokka, joka vastaa näkymästä, jossa koealatiedostoon lisätään puita
+    """
+
     def __init__(self, root, handle_show_stand_data_view, show_handle_plots_view):
+        """Luokan konstruktori
+
+        Args:
+            root: Tkinter-elementti, johon näkymä alustetaan
+            handle_show_stand_data_view: metodi, jota kutsutaan,
+                kun klikataan "Näytä koealan tiedot"
+            show_handle_plots_view: metodi, jota kutsutaan,
+                kun klikataan "Takaisin"
+        """
+
         self._root = root
         self._frame = None
         self._plot_service = PLOT_SERVICE
@@ -30,9 +43,13 @@ class PlotView():
         self._initialize()
 
     def pack(self):
+        """Pakkaa näkymän
+        """
         self._frame.place(relx=0.5, rely=0.5 ,anchor="center")
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()
 
     def _initialize(self):

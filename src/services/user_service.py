@@ -30,10 +30,10 @@ class UserService():
             username: Käyttäjän käyttätunnus, luetaan käyttäjältä
             password: Käyttäjän salasana, luetaan käyttäjältä
         Returns:
-            New user as an User-object
+            Palauttaa uuden käyttäjän User-oliona
         Raises:
             UsernameExistsError:
-                Error occurs in case username already exists
+                Virhe ilmenee, jos käyttäjätunnus on jo olemassa
         """
 
         existing_user = self._user_repository.find_by_username(username)
@@ -48,22 +48,22 @@ class UserService():
         return user
 
     def get_current_user(self):
-        """Return user currently logged in
+        """Palauttaa nykyisen sisäänkirjautuneen käyttäjän
         """
         return self._user
 
     def login(self, username, password):
-        """Log user in
+        """Kirjaa käyttäjän sisään
 
             Args:
-                username: username, read from user
-                password: user password, read from user
+                username: Käyttäjätunnus, luetaan käyttäjältä
+                password: Salasana, luetaan käyttäjältä
 
             Returns:
-                Logged in user as an User-object
+                Kirjautuneen käyttäjän User-oliona
             Raises:
                 InvalidCredentialsError:
-                    Error occurs in case of mismatch between username and password
+                    Virhe ilmenee, jos käyttäjätunnus ja salasana eivät täsmää
 
         """
 
@@ -75,13 +75,15 @@ class UserService():
         return user
 
     def logout(self):
+        """Kirjaa sisäänkirjautuneen käyttäjän ulos
+        """
         self._user = None
 
     def get_users(self):
-        """Return all users
+        """Palauttaa kaikki tietokantaan tallennetut käyttäjät
 
         Returns:
-            All users as a list of User-objects
+            Palauttaa listan User-oliota
         """
         return self._user_repository.find_all()
 

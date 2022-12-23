@@ -8,6 +8,16 @@ class PlotListView:
     """
     
     def __init__(self, root, plots, handle_open_plot, remove_plot):
+        """Luokan konstruktori
+
+        Args:
+            root: Tkinter-elementti, johon näkymä alustetaan
+            plots: lista näytettävistä koealojen nimistä
+            handle_open_plot: metodi, jota kutsutaan,
+                kun klikataan "Avaa koeala"
+            remove_plot: metodi, jota kutsutaan,
+                kun klikataan: "Poista koeala"
+        """
         self._root = root
         self._plots = plots
         self._frame = None
@@ -22,9 +32,13 @@ class PlotListView:
         self._initialize()
 
     def pack(self):
+        """Pakkaa näkymän
+        """
         self._frame.pack()
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()
 
     def _initialize_plot(self, plot):
@@ -76,7 +90,19 @@ class PlotListView:
 
 class HandlePlotsView:
 
+    """Koealatiedostojen lisäämisestä ja poistamisesta vastaava näkymä
+    """
+
     def __init__(self, root, open_plot_handler, handle_logout):
+        """Luokan konstruktori
+        
+        Args:
+            root: Tkinter-elementti, jonka sisään näkymä alustetaan
+            open_plot_handler: metodi, jota kutsutaan,
+                kun klikataan "Avaa koeala"
+            handel_logout: metodi, jota kutsutaan,
+                kun klikataan "Kirjaudu ulos
+            """        
         self._open_plot_handler = open_plot_handler
         self._root = root
         self.plot_entry = None
@@ -95,9 +121,13 @@ class HandlePlotsView:
         self._initialize()
     
     def pack(self):
+        """Pakkaa näkymän
+        """
         self._frame.place(relx=0.5, rely=0.5 ,anchor="center")
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()
 
     def _initialize_plot_list(self):

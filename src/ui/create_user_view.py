@@ -62,7 +62,11 @@ class CreateUserView:
 
 
     def _show_error(self, message):
-        """Näyttää mahdollisen virheviestin"""
+        """Näyttää mahdollisen virheviestin
+        
+        Args:
+            Virheviesti, joka näytetään
+            """
         self._error_variable.set(message)
         self._error_label.grid()
 

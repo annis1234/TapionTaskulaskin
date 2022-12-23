@@ -7,7 +7,17 @@ from services.calc_service import CALC_SERVICE
 
 class StandDataView():
 
+    """Koealan puustotunnusten esittämisestä vastaava luokka
+    """
+
     def __init__ (self, root, handle_show_plot_view):
+        """Luokan konstruktori
+
+        Args:
+            root: Tkinter-elementti, johon näkymä alustetaan
+            handle_show_plot_view: metodi, jota kutsutaan "Takaisin"-painikkeen painamisen yhteydessä
+        """
+
         self._root = root
         self._frame = None
         self._plot_service = PLOT_SERVICE
@@ -22,13 +32,16 @@ class StandDataView():
         self._initialize_stand_data()
 
     def pack(self):
+        """Pakkaa näkymän
+        """
         self._frame.place(relx=0.5, rely=0.5 ,anchor="center")
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()
     
     def _initialize_charts(self):
-
         self._charts_view = Charts(self._charts_frame)
         self._charts_view.pack()
 
@@ -65,7 +78,15 @@ class StandDataView():
 
 class Charts():
 
+    """Kuvaajan piirtämisestä vastaava luokka
+    """
+
     def __init__(self, root):
+        """Luokan konstruktori
+
+        Args:
+            root: Tkinter-elementti, johon näkymä alustetaan
+        """
         self._root = root
         self._frame = None
         self._calc_service = CALC_SERVICE
@@ -73,9 +94,13 @@ class Charts():
         self._initialize_plot()
 
     def pack(self):
+        """Pakkaa näkymän
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()
 
     def _initialize_plot(self):

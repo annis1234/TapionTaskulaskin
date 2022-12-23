@@ -27,7 +27,7 @@ class CalcService():
         return height_sum/len(trees)
 
     def mean_diameter(self):
-        """Laskee koealan puuston keskiläpimita
+        """Laskee koealan puuston keskiläpimitan
 
         Returns:
             Palauttaa koealan puuston keskiläpimitan

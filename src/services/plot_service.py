@@ -25,6 +25,9 @@ class PlotService():
         """Luo uuden koealan csv-tiedostona
         Args:
             plot_filename: tiedoston nimi, luetaan käyttäjältä
+        Raises:
+            ValueError:
+                Virhe ilmenee, jos syötekenttä on tyhjä
         """
         if plot_filename == "":
             raise ValueError
@@ -34,11 +37,16 @@ class PlotService():
         """Valitsee koealatiedoston, jota halutaan käsitellä
 
         Args:
-            plot_filename: Valitun tiedoston nimi, luetaan käyttäjältä
+            plot_filename: Valitun tiedoston nimi
         """
         self._plot_repository.select_plot(plot_filename)
 
     def remove_plot(self, plot_filename):
+        """Poistaa koealatiedoston hakemistosta
+
+        Args:
+            plot_filename: Poistettavan tiedoston nimi
+        """
         self._plot_repository.remove_plot(plot_filename)
 
     def clear_plot(self):
@@ -56,6 +64,18 @@ class PlotService():
         return self._plot_repository.return_plots()
 
     def ensure_plot_exists(self, plot_filename):
+        """Tarkastaa, onko nimetty koealatiedosto olemassa
+        
+        Args:
+            plot_filename: Koealatiedoston nimi, luetaan käyttäjältä
+
+        Raises:
+            PlotExistsError:
+                Virhe ilmenee, jos samanniminen tiedosto on jo luotu
+
+        Returns:
+            False, jos samannimistä tiedostoa ei löydy
+        """
         if self._plot_repository.ensure_plot_exists(plot_filename):
             raise PlotExistsError
         else:
