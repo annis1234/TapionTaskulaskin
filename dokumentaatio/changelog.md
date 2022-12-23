@@ -30,3 +30,9 @@ toimii
 - Testattu, että uuden käyttäjän luominen onnistuu
 - Lisätty koealojen käsittelystä vastaavaan näkymään listaus luoduista tiedostoista
 - Muotoiltu sovelluksen ulkoasua
+
+## Viikko 7
+
+- Lisätty koealan tiedot näyttävään näkymään pituus-läpimitta-relaatiot esittävä kuvaaja
+- Refaktoroitu service-luokat PlotService-, CalcService- ja UserService-luokkiin
+- Lisätty testejä service- ja repository-luokille
